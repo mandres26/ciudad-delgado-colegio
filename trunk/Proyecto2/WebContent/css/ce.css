@@ -1,0 +1,88 @@
+/* ------------
+Estilos de Cascada para Sitios Web de Centros Escolares
+///--------------------- 0.o ------ (JotaCe Design © 2012) -------*/
+body{background:#fbfbfb;margin:0px;padding:0px;font:12px Arial, Helvetica, sans-serif;color:#333;}
+p{line-height:18px;}
+/*-- HEADERS -- */
+h1{letter-spacing:-1px;margin:0px;}	
+h2{letter-spacing:-1px;margin:0px;}	
+
+/* -- LINKS -- */
+a 					{text-decoration:none;}
+a:link, a:visited 	{color:#595959; background:#FFFFFF}
+a:hover				{color:#5a789b; background:#FFFFFF}
+
+/*Estilos div de la envoltura del sitio Web*/
+#wrapper{width:780px;margin:auto;background-color:#FFF;border-left:4px solid #E9F2FA;border-right:4px solid #E9F2FA;color:#666;}
+
+/*Menu Top*/
+#menu_top{ height:32px; background-color: #17304e; border-bottom:solid 9px #479dd5;}
+#menu_top ul{padding:0px;margin:0px;list-style-type:none; }
+#menu_top ul li{border-left:none;}
+#menu_top ul li a:link, #menu_top ul li a:visited {color: #fff;background-color:#17304e;}
+#menu_top ul li a:hover, #menu_top ul li a:hover {color: #fff;background-color:#0EB8FF;}
+#menu_top ul li li a:link, #menu_top ul li li a:visited {color: #fff;background-color:#33537b;border-left: 4px solid #0EB8FF;}
+#menu_top ul li li a:hover, #menu_top ul li li a:hover {color: #fff;background-color:#17304E;}
+
+/*--- Encabezado ---*/	
+#header{background:#FFF url(../images/ce.jpg) top left repeat-x;border-bottom:5px solid #097ca9;padding:20px 0px 0px 0px;height:235px;color:#FFF;}
+/*/Estilo para encabezados/*/
+#header h1 a{text-decoration:none; font-size:33px;}
+#header h1 a:link,
+#header h1 a:visited {color:#E0FF4F;background:#299fcd;}
+#header h1 a:hover{color:#FFF;background:#299fcd;}
+
+/*-- Nombre del a Institución --*/
+#titulo { width:480px;font:25px/23px Georgia, "Times New Roman", Times, serif;float:right; padding-top:3px;margin:180px 20px 0px 0px;}	
+#titulo span{ font:normal 16px Arial, Helvetica, sans-serif;color:#175a86;}	
+/*-- Contenedor --*/
+#container{width:585px;float:right;padding:20px 10px 0px 10px;}
+#galeria{padding:20px 10px 0px 10px;}
+/*/Estilo para encabezados/*/
+#container h2{font:normal 22px Arial, Helvetica, sans-serif;padding:0;margin:5px 0;color:#595959;}
+div#container h2.aviso{font:normal 20px Georgia, "Times New Roman", Times, serif;padding:0;margin:5px 0;color:#29719f;}
+#container .post{border-bottom:2px solid #EEE;color:#a4a4a4; margin-bottom:10px;}
+#container img.left {float: left;margin: 0 15px 0 0;}
+
+/*-- Avisos y Eventos --*/
+blockquote{background-color:#F6FAFD;color:#59819F;padding:10px;margin:0px;border:1px solid #DCE9F6;}
+
+/*-- Barra Lateral--*/
+#sidebar{width:168px;float:left;position:relative;}
+#sidebar .logo{margin:25px 0 0 5px; padding-top:8px; position:relative;border-top:solid 5px #E9F2FA; }
+#wrapper_sidebar{width:158px;margin:5px 5px;padding:20px 0px 10px 0px;}
+#wrapper_sidebar h2{color:#204465;font:bold 14px Arial, Helvetica, sans-serif;background-color:#E9F2FA;border-bottom:3px solid #DCE9F6;
+	padding:5px;text-transform:uppercase;}
+.Table { border-spacing:1px;font-family:Verdana, Arial, Helvetica, sans-serif;background-color:#E7E7E7;color:#333;margin:auto;}
+.Table td, .Table tr, .Table th{border-collapse: separate;border-collapse: collapse;border-spacing: 0;}
+.Table td, .Table th {padding: 4px;}
+/*----------Estilos para menú de la Izquierda-------------------*/
+#wrapper_sidebar .sf-sub-indicator { background:url('../images/arrows-000.png') no-repeat -10px 0;} 
+#wrapper_sidebar ul{padding:0px;margin:0px;list-style-type:none;}
+#wrapper_sidebar ul li{line-height:24px;border-bottom:1px solid #EEE;width:100%;}
+#wrapper_sidebar ul li li{ width:15em;left:3.2em;}
+#wrapper_sidebar ul li a {display:block;padding:0px 0px 0px 15px;}
+#wrapper_sidebar ul li a:link, 
+#wrapper_sidebar ul li a:visited {color: #032B50;background-color:#FFF;}
+#wrapper_sidebar ul li a:hover {color:#0099CC;background-color:#F6FAFD;}
+#wrapper_sidebar ul li li a:link, #sidebar ul li li a:visited {border-left: 4px solid #0EB8FF;}
+#wrapper_sidebar ul li li a {border-right:	1px solid #CFDEFF;}
+
+/*-- Estilos para el pie --*/
+#footer{background-color:#299fcd;border-top:4px solid #DCE9F6;color:#FFF;padding:5px 10px;margin:auto;}
+#footer ul{margin-left: 0;padding-left: 0;white-space: nowrap;}
+#footer li{display: inline;list-style-type: none;}
+#footer a { padding: 3px 10px; text-decoration: none;}
+#footer a:link,
+#footer a:visited{color: #fff;background-color: #3B7E9F;}
+#footer a:hover{color: #fff;background-color: #369;}
+
+/*-- Buscador --*/
+#searchForm {float:right; height:28px;}
+#searchForm fieldset {border:none;}
+#searchForm form {margin:0 auto; padding:0;}
+#searchForm input {border:1px solid #003366;background-color:#FFF; color:#666;padding:3px;}
+#searchForm form .button{border:1px solid #5c7788;background-color:#042439; color:#fff;padding:3px;}
+	
+/*-- FIXED --*/
+.clear{clear:both;}

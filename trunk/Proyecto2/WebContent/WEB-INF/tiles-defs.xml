@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+
+
+
+<definition name="principal" path="/WEB-INF/Plantilla/Estructura.jsp">
+<put name="titulo" value=""/>
+<put name="menucabezera" value="/WEB-INF/Plantilla/MenuCabezara.jsp"/>
+<put name="banner" value="/WEB-INF/Plantilla/Banner.jsp"/>
+<put name="menulateral" value="/WEB-INF/Plantilla/MenuLateral.jsp"/>
+<put name="pie" value="/WEB-INF/Plantilla/Pie.jsp"/> 
+<put name="cuerpo" value=""/>
+</definition>
+
+<definition name="Index" extends="principal">
+<put name="titulo" value=".::Centro Escolar ::."/>
+<put name="cuerpo" value="/WEB-INF/JSP/Inicio.jsp"/>
+</definition>
+
+
+      
+
+</tiles-definitions>
+
