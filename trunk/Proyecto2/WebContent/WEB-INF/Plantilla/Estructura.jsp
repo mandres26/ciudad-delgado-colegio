@@ -35,9 +35,9 @@
   
   <!-- Inicio Contenido -->
  
- 
+  <div id="container">
  <tiles:insert attribute="cuerpo"/>
- 
+ </div>
   <!-- TERMINA CONTENIDO -->
 </div>
   <!-- Inicia Barra Lateral -->

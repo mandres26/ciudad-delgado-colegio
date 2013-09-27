@@ -36,7 +36,8 @@ a:hover				{color:#5a789b; background:#FFFFFF}
 #titulo { width:480px;font:25px/23px Georgia, "Times New Roman", Times, serif;float:right; padding-top:3px;margin:180px 20px 0px 0px;}	
 #titulo span{ font:normal 16px Arial, Helvetica, sans-serif;color:#175a86;}	
 /*-- Contenedor --*/
-#container{width:585px;float:right;padding:20px 10px 0px 10px;}
+#container{width:770px;float:right;padding:20px 10px 0px 10px;}
+/* #container{width:585px;float:right;padding:20px 10px 0px 10px;} */
 #galeria{padding:20px 10px 0px 10px;}
 /*/Estilo para encabezados/*/
 #container h2{font:normal 22px Arial, Helvetica, sans-serif;padding:0;margin:5px 0;color:#595959;}
@@ -86,3 +87,36 @@ blockquote{background-color:#F6FAFD;color:#59819F;padding:10px;margin:0px;border
 	
 /*-- FIXED --*/
 .clear{clear:both;}
+
+/*-- isaac div --*/
+#divform{
+	
+	padding-top: 20px;
+	padding-left: 20px;
+	margin:auto;
+	border: solid 1px;
+	border-color: black;
+	width: 300px;
+	background:-o-linear-gradient(bottom, #e5e5e5 5%, #ffffff 100%);
+	
+	
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:14px;
+	-webkit-border-bottom-left-radius:14px;
+	border-bottom-left-radius:14px;
+	
+	-moz-border-radius-bottomright:14px;
+	-webkit-border-bottom-right-radius:14px;
+	border-bottom-right-radius:14px;
+	
+	-moz-border-radius-topright:14px;
+	-webkit-border-top-right-radius:14px;
+	border-top-right-radius:14px;
+	
+	-moz-border-radius-topleft:14px;
+	-webkit-border-top-left-radius:14px;
+	border-top-left-radius:14px;
+}
+}

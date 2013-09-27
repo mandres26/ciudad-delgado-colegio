@@ -26,8 +26,20 @@
 <put name="cuerpo" value="/WEB-INF/JSP/Inicio.jsp"/>
 </definition>
 
-
+<definition name="grado" extends="principal">
+<put name="titulo" value=".:: grado ::."/>
+<put name="cuerpo" value="/WEB-INF/JSP/grado.jsp"/>
+</definition>
       
+<definition name="seccion" extends="principal">
+<put name="titulo" value=".:: Seccion ::."/>
+<put name="cuerpo" value="/WEB-INF/JSP/seccion.jsp"/>
+</definition> 
+
+<definition name="docente" extends="principal">
+<put name="titulo" value=".:: Docente ::."/>
+<put name="cuerpo" value="/WEB-INF/JSP/docente.jsp"/>
+</definition>       
 
 </tiles-definitions>
 
