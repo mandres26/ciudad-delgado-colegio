@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <struts-config>
 
-	 <form-beans>
-		
-	</form-beans> 
-	
+	<form-beans>
+		<form-bean name="GradoForm" type="sv.edu.udb.form.GradoForm" />
+		<form-bean name="SeccionForm" type="sv.edu.udb.form.SeccionForm" />
+		<form-bean name="DocenteForm" type="sv.edu.udb.form.DocenteForm" />
+	</form-beans>
+
 	<global-forwards>
-		
+
 	</global-forwards>
-	
+
 	<action-mappings>
+		<action name="GradoForm" path="/grado" parameter="method"
+			scope="request" type="sv.edu.udb.action.GradoAction">
+			<forward name="ingresado" path="/index.jsp" />
+		</action>
 		
+		<action name="SeccionForm" path="/seccion" parameter="method"
+			scope="request" type="sv.edu.udb.action.SeccionAction">
+			<forward name="ingresado" path="/index.jsp" />
+		</action>
 		
+		<action name="DocenteForm" path="/docente" parameter="method"
+			scope="request" type="sv.edu.udb.action.DocenteAction">
+			<forward name="ingresado" path="/index.jsp" />
+		</action>
+
 	</action-mappings>
-	
-		<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
-		<message-resources parameter="sv.edu.udb.resources.AplicationResource"/>
-		<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+
+	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+	<message-resources parameter="sv.edu.udb.resources.AplicationResource" />
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
 		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
 		<set-property property="moduleAware" value="true" />
-		</plug-in>
-	
-	
+	</plug-in>
 
-	
+
+
+
 </struts-config>
