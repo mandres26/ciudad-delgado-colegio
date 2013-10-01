@@ -36,7 +36,7 @@ a:hover				{color:#5a789b; background:#FFFFFF}
 #titulo { width:480px;font:25px/23px Georgia, "Times New Roman", Times, serif;float:right; padding-top:3px;margin:180px 20px 0px 0px;}	
 #titulo span{ font:normal 16px Arial, Helvetica, sans-serif;color:#175a86;}	
 /*-- Contenedor --*/
-#container{width:770px;float:right;padding:20px 10px 0px 10px;}
+#container{width:585px;float:right;padding:20px 10px 0px 10px;}
 /* #container{width:585px;float:right;padding:20px 10px 0px 10px;} */
 #galeria{padding:20px 10px 0px 10px;}
 /*/Estilo para encabezados/*/

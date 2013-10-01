@@ -6,7 +6,7 @@
 <link href="css/ce.css" rel="stylesheet" type="text/css" media="screen" title="default" />
 <link rel="stylesheet" type="text/css" href="css/superfish.css" media="screen">
 <link rel="stylesheet" media="screen" href="css/superfish-vertical.css" /> 
-
+<link rel="stylesheet" type="text/css" href="css/matricula.css" media="screen">
 </head>
 <body>
 
@@ -56,7 +56,7 @@
   </div>
   
   <!-- Termina Pie -->
-
+</div>
 <!--Finaliza Sitio -->
 </body>
 </html>
