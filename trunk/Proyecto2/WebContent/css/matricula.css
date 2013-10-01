@@ -1,0 +1,301 @@
+@charset "utf-8";
+/* CSS Document */
+
+#principal{
+			background-color:#FFFFFF;
+			width: 585px;
+			text-align:left;
+			margin:0;
+			padding: 0;
+		}
+#titulo1 {
+	font-size: 14px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	border-width: 1px;
+	border-style: solid;
+	line-height: 15pt;
+	padding: 10;
+	box-shadow: 10px 10px 5px #888888;
+	border: 1px solid #000000;
+	-moz-border-radius-bottomleft: 14px;
+	-webkit-border-bottom-left-radius: 14px;
+	border-bottom-left-radius: 14px;
+	-moz-border-radius-bottomright: 14px;
+	-webkit-border-bottom-right-radius: 14px;
+	border-bottom-right-radius: 14px;
+	-moz-border-radius-topright: 14px;
+	-webkit-border-top-right-radius: 14px;
+	border-top-right-radius: 14px;
+	-moz-border-radius-topleft: 14px;
+	-webkit-border-top-left-radius: 14px;
+	border-top-left-radius: 14px;
+	text-align: center;
+}
+
+#cuerpo{
+	margin: 0;
+}
+#cuerpopri{
+		margin-right: 240px;
+		width: 580px;
+		
+		}
+		#navegador{
+			float: right;
+			width: 230px;
+			font-size:18px;		
+		}
+		.texto{
+		 font-size:14px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    border-width: 1px;
+	border-style: solid;
+	line-height:15pt;
+	padding:10;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:14px;
+	-webkit-border-bottom-left-radius:14px;
+	border-bottom-left-radius:14px;
+	
+	-moz-border-radius-bottomright:14px;
+	-webkit-border-bottom-right-radius:14px;
+	border-bottom-right-radius:14px;
+	
+	-moz-border-radius-topright:14px;
+	-webkit-border-top-right-radius:14px;
+	border-top-right-radius:14px;
+	
+	-moz-border-radius-topleft:14px;
+	-webkit-border-top-left-radius:14px;
+	border-top-left-radius:14px;
+		}
+	#p2{
+		text-align: center;
+	}
+	#t1 {
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#n0{
+		text-align: center;
+		padding:0;
+		width:150px;
+		float:left;
+		margin-right:10px;
+	}
+	#n1{
+		text-align: center;
+		padding:0;
+		width:200px;
+		float:left;
+		margin-right:10px;
+	}
+	#n2{
+		text-align: center;
+		padding:0;
+		width:200px;
+		float:left;
+		margin-right:10px;
+	}
+	#dato1{
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#grado{
+		
+		padding:0;
+		width:140px;
+		float:left;
+		margin-right:10px;
+	}
+	#turno1{
+		
+		padding:0;
+		width:140px;
+		float:left;
+		margin-right:10px;
+	}
+	#turno2{
+		
+		padding:0;
+		width:105px;
+		float:left;
+		margin-right:10px;
+	}
+	#sexo{
+		
+		padding:0;
+		width:150px;
+		float:left;
+		margin-right:10px;
+	}
+	#dato2{
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#nac{
+		padding:0;
+		width:280px;
+		float:left;
+		margin-right:10px;
+	}
+	#edad{
+		padding:0;
+		width:100px;
+		float:left;
+		margin-right:10px;
+	}
+	#in{
+	padding: 10px;
+	}
+	#pare{
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#dir{
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#dato3{
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#zona{
+		padding:0;
+		width:300px;
+		float:left;
+		margin-right:10px;
+	}
+	#repite{
+		padding:0;
+		width:230px;
+		float:left;
+		margin-right:10px;
+	}
+	#dato4{
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#religion{
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#p3{
+		font-size:14px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    border-width: 1px;
+	border-style: solid;
+	line-height:15pt;
+	padding:10;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:14px;
+	-webkit-border-bottom-left-radius:14px;
+	border-bottom-left-radius:14px;
+	
+	-moz-border-radius-bottomright:14px;
+	-webkit-border-bottom-right-radius:14px;
+	border-bottom-right-radius:14px;
+	
+	-moz-border-radius-topright:14px;
+	-webkit-border-top-right-radius:14px;
+	border-top-right-radius:14px;
+	
+	-moz-border-radius-topleft:14px;
+	-webkit-border-top-left-radius:14px;
+	border-top-left-radius:14px;
+	}
+	#pii{
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#dui{
+		padding:0;
+		width:200px;
+		float:left;
+		margin-right:10px;
+	}
+	#po{
+		padding:0;
+		width:350px;
+		float:left;
+		margin-right:10px;
+	}
+	#info{
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#pt4{
+		font-size:14px;
+    font-family: Verdana, Geneva, Arial, 		Helvetica, sans-serif;
+    border-width: 1px;
+	border-style: solid;
+	line-height:15pt;
+	padding:10;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:14px;
+	-webkit-border-bottom-left-radius:14px;
+	border-bottom-left-radius:14px;
+	
+	-moz-border-radius-bottomright:14px;
+	-webkit-border-bottom-right-radius:14px;
+	border-bottom-right-radius:14px;
+	
+	-moz-border-radius-topright:14px;
+	-webkit-border-top-right-radius:14px;
+	border-top-right-radius:14px;
+	
+	-moz-border-radius-topleft:14px;
+	-webkit-border-top-left-radius:14px;
+	border-top-left-radius:14px;
+	}
+	#pt4-{
+		margin:0 auto;
+		padding:0;
+		width: 580px;
+	}
+	#neu{
+		padding:0;
+		width:100px;
+		float:left;
+		margin-right:10px;
+	}
+	#psi{
+		padding:0;
+		width:100px;
+		float:left;
+		margin-right:10px;
+	}
+	#aulg{
+		padding:0;
+		width:175px;
+		float:left;
+		margin-right:10px;
+	}
+	#terapia{
+		padding:0;
+		width:150px;
+		float:left;
+		margin-right:10px;
+	}
+	#tedu{
+		padding:0;
+		width:200px;
+		float:left;
+		margin-right:10px;
+	}

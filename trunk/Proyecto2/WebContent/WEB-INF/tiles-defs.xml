@@ -41,5 +41,10 @@
 <put name="cuerpo" value="/WEB-INF/JSP/docente.jsp"/>
 </definition>       
 
+<definition name="matricula" extends="principal">
+<put name="titulo" value=".::Centro Escolar ::."/>
+<put name="cuerpo" value="/WEB-INF/JSP/matricula.jsp"/>
+</definition>
+
 </tiles-definitions>
 
