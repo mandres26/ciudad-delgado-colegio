@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+        "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+        
 <struts-config>
 
 	<form-beans>
@@ -8,24 +12,31 @@
 	</form-beans>
 
 	<global-forwards>
-
+		<forward name="docente" path="/tiledocente.do" />
+		<forward name="grado" path="/tilegrado.do" />
+		<forward name="seccion" path="/tileseccion.do" />
 	</global-forwards>
 
 	<action-mappings>
-		<action name="GradoForm" path="/grado" parameter="method"
+		<action name="GradoForm" path="/grado" input="/tilegrado.do" parameter="method"
 			scope="request" type="sv.edu.udb.action.GradoAction">
-			<forward name="ingresado" path="/index.jsp" />
+			<forward name="ingresado" path="/tilegrado.do" />
 		</action>
-		
-		<action name="SeccionForm" path="/seccion" parameter="method"
+
+		<action name="SeccionForm" path="/seccion" input="/tileseccion.do" parameter="method"
 			scope="request" type="sv.edu.udb.action.SeccionAction">
-			<forward name="ingresado" path="/index.jsp" />
+			<forward name="ingresado" path="/tileseccion.do" />
 		</action>
-		
-		<action name="DocenteForm" path="/docente" parameter="method"
-			scope="request" type="sv.edu.udb.action.DocenteAction">
-			<forward name="ingresado" path="/index.jsp" />
+
+		<action name="DocenteForm" path="/docente" input="/tiledocente.do"
+			parameter="method" scope="request" type="sv.edu.udb.action.DocenteAction">
+			<forward name="ingresado" path="/tiledocente.do" />
 		</action>
+
+
+		<action path="/tiledocente" forward="docente" />
+		<action path="/tilegrado" forward="grado" />
+		<action path="/tileseccion" forward="seccion" />
 
 	</action-mappings>
 
@@ -36,6 +47,11 @@
 		<set-property property="moduleAware" value="true" />
 	</plug-in>
 
+	<!-- ================== Validator plugin ========================= -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
 
 
 
