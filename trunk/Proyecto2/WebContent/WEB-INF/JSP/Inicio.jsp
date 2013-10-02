@@ -1,9 +1,13 @@
-
+<%@ include file="../JSP/top-tags.jsp"%>
 <div class="post">
 	<h2 class="aviso">Avisos y Novedades</h2>
 	<blockquote>
 		<p>Inicio de año escolar 2012</p>
 	</blockquote>
+	<html:link forward="docente">docente</html:link>
+<html:link forward="grado">grado</html:link>
+<html:link forward="seccion">seccion</html:link>
+
 </div>
 <div>
 	<h2>Contenido &amp; links</h2>

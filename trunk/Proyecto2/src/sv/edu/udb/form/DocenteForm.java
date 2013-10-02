@@ -1,8 +1,10 @@
 package sv.edu.udb.form;
 
-import org.apache.struts.action.ActionForm;
+import org.apache.struts.validator.ValidatorForm;
 
-public class DocenteForm extends ActionForm {
+
+
+public class DocenteForm extends ValidatorForm {
 
 	/**
 	 * 

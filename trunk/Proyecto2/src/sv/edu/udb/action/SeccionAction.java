@@ -11,7 +11,7 @@ public class SeccionAction extends DispatchAction{
 			HttpServletResponse response)
 			throws Exception {
 
-			return mapping.findForward("");
+			return mapping.findForward("ingresado");
 			
 			}
 

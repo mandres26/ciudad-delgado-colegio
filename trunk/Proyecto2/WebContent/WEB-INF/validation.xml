@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+
+	<formset>
+		<form name="DocenteForm">
+			<field property="nombre" depends="required">
+				<arg key="label.nombre" />
+			</field>
+			<field property="apellido" depends="required">
+				<arg key="label.apellido" />
+			</field>
+			<field property="direccion" depends="required">
+				<arg key="label.direccion" />
+			</field>
+			<field property="telefono" depends="required">
+				<arg key="label.telefono" />
+			</field>
+			<field property="correo" depends="required">
+				<arg key="label.correo" />
+			</field>
+		</form>
+	</formset>
+
+	<formset>
+		<form name="GradoForm">
+			<field property="grado" depends="required">
+				<arg key="label.grado" />
+			</field>
+			<field property="materia" depends="required">
+				<arg key="label.materia" />
+			</field>
+			<field property="seccion" depends="required">
+				<arg key="label.seccion" />
+			</field>
+			<field property="ciclo" depends="required">
+				<arg key="label.ciclo" />
+			</field>
+		</form>
+	</formset>
+
+	<formset>
+		<form name="SeccionForm">
+		<field property="seccion" depends="required">
+			<arg key="label.seccion" />
+		</field>
+		<field property="cupo" depends="required">
+			<arg key="label.cupo" />
+		</field>
+		</form>
+	</formset>
+
+
+</form-validation>
