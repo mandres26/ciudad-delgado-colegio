@@ -1,6 +1,6 @@
 package sv.edu.udb.action;
-import javax.servlet.http.*;
 
+import javax.servlet.http.*;
 import org.apache.struts.action.*;
 import org.apache.struts.actions.DispatchAction;
 public class DocenteAction extends DispatchAction{
@@ -11,7 +11,7 @@ public class DocenteAction extends DispatchAction{
 			HttpServletResponse response)
 			throws Exception {
 
-			return mapping.findForward("");
+			return mapping.findForward("ingresado");
 			
 			}
 	
