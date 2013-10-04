@@ -8,34 +8,87 @@
 
 	<formset>
 		<form name="DocenteForm">
-			<field property="nombre" depends="required">
-				<arg key="label.nombre" />
+			<field property="nombre" depends="required,mask,minlength">
+				<arg0 key="label.nombre" />
+				<arg1 name="mask" key="label.nombre" />
+				<arg2 name="minlength" key="label.nombre" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
 			</field>
-			<field property="apellido" depends="required">
-				<arg key="label.apellido" />
+			<field property="apellido" depends="required,mask,minlength">
+				<arg0 key="label.apellido" />
+				<arg1 name="mask" key="label.apellido" />
+				<arg2 name="minlength" key="label.apellido" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
 			</field>
-			<field property="direccion" depends="required">
-				<arg key="label.direccion" />
+			<field property="direccion" depends="required,mask,minlength">
+				<arg0 key="label.direccion" />
+				<msg name="mask" key="label.direccion.maskdireccion" />
+				<arg1 name="mask" key="label.direccion" />
+				<msg name="minlength" key="label.direccion.minlengthdireccion" />
+				<arg2 name="minlength" key="label.direccion" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9#]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
 			</field>
-			<field property="telefono" depends="required">
-				<arg key="label.telefono" />
+			<field property="telefono" depends="required,mask,maxlength">
+				<arg0 key="label.telefono" />
+				<msg name="mask" key="label.telefono.masktel" />
+				<arg1 name="mask" key="label.telefono" />
+				<arg2 name="maxlength" key="label.telefono" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]{4}\-[0-9]{4}$</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>9</var-value>
+				</var>
 			</field>
-			<field property="correo" depends="required">
-				<arg key="label.correo" />
+			<field property="correo" depends="required,email">
+				<arg0 key="label.correo" />
+				<arg1 name="email" key="label.correo" />
+
 			</field>
 		</form>
 	</formset>
 
 	<formset>
 		<form name="GradoForm">
-			<field property="grado" depends="required">
-				<arg key="label.grado" />
+			<field property="grado" depends="required,mask">
+				<arg0 key="label.grado" />
+				<msg name="mask" key="label.grado.mask" />
+				<arg1 name="mask" key="label.grado" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9]*$</var-value>
+				</var>
 			</field>
 			<field property="materia" depends="required">
-				<arg key="label.materia" />
+				<arg0 key="label.materia" />
+
 			</field>
 			<field property="seccion" depends="required">
-				<arg key="label.seccion" />
+				<arg0 key="label.seccion" />
+
 			</field>
 			<field property="ciclo" depends="required">
 				<arg key="label.ciclo" />
@@ -45,12 +98,43 @@
 
 	<formset>
 		<form name="SeccionForm">
-		<field property="seccion" depends="required">
-			<arg key="label.seccion" />
-		</field>
-		<field property="cupo" depends="required">
-			<arg key="label.cupo" />
-		</field>
+			<field property="seccion" depends="required,mask">
+				<arg0 key="label.seccion" />
+				<msg name="mask" key="label.seccion.mask" />
+				<arg1 name="mask" key="label.seccion" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[A-Z]{1}$</var-value>
+				</var>
+			</field>
+
+			<field property="cupo" depends="required,integer,maxlength,intRange">
+				<arg0 name="required" key="label.cupo" />
+				<msg name="integer" key="label.cupo.integer" />
+				<arg1 name="integer" key="label.cupo" />
+				<msg name="maxlength" key="label.cupo.maxlength" />
+				<arg2 name="maxlength" key="label.cupo" />
+				
+<!-- 				<arg3 key="label.cupo.intRange" /> -->
+<!-- 				<arg4 name="intRange" key="label.cupo.min" /> -->
+<!-- 				<arg5 name="intRange" key="label.cupo.max" /> -->
+
+<!-- 				<var> -->
+<!-- 					<var-name>min</var-name> -->
+<!-- 					<var-value>10</var-value> -->
+<!-- 				</var> -->
+				
+<!-- 				<var> -->
+<!-- 					<var-name>max</var-name> -->
+<!-- 					<var-value>40</var-value> -->
+<!-- 				</var> -->
+				
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2</var-value>
+				</var>
+
+			</field>
 		</form>
 	</formset>
 

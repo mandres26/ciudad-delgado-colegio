@@ -25,7 +25,9 @@
 					</html:button></td>
 			</tr>
 		</table>
-
+		<div>
+			<html:errors />
+		</div>
 	</html:form>
 
 </div>
