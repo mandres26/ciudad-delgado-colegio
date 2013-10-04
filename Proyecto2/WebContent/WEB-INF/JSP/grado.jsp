@@ -24,7 +24,7 @@
 						<html:option value="1">A</html:option>
 					</html:select></td>
 				<td><html:errors property="seccion" /></td>
-				
+
 			</tr>
 			<tr>
 				<td><bean:message key="label.ciclo" /></td>
@@ -45,7 +45,9 @@
 					</html:button></td>
 			</tr>
 		</table>
-
+		<div>
+			<html:errors />
+		</div>
 	</html:form>
 
 </div>
