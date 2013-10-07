@@ -9,6 +9,7 @@
 		<form-bean name="GradoForm" type="sv.edu.udb.form.GradoForm" />
 		<form-bean name="SeccionForm" type="sv.edu.udb.form.SeccionForm" />
 		<form-bean name="DocenteForm" type="sv.edu.udb.form.DocenteForm" />
+		<form-bean name="MatriculaForm" type="sv.edu.udb.form.MatriculaForm" />
 	</form-beans>
 
 	<global-forwards>
@@ -32,7 +33,11 @@
 			parameter="method" scope="request" type="sv.edu.udb.action.DocenteAction">
 			<forward name="ingresado" path="/tiledocente.do" />
 		</action>
-
+		
+		<action name="MatriculaForm" input="/Matricula.jsp" path="/matricula" parameter="method"
+			scope="request" type="sv.edu.udb.action.MatriculaAction">
+			<forward name="matriculado" path="/index.jsp" />
+		</action>
 
 		<action path="/tiledocente" forward="docente" />
 		<action path="/tilegrado" forward="grado" />
