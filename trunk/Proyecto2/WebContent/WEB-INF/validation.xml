@@ -136,7 +136,296 @@
 
 			</field>
 		</form>
+		
+		<!-- Form Matricula -->
+		<form name="MatriculaForm">
+		<field property="apellidos"	depends="required,mask,minlength">
+		<arg0 key="label.apellidos"/>
+		<arg1 name="mask" key="label.apellidos" />
+		<arg2 name="minlength" key="label.apellidos" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="nombres"	depends="required,mask,minlength">
+		<arg0 key="label.nombres"/>
+		<arg1 name="mask" key="label.nombres" />
+		<arg2 name="minlength" key="label.nombres" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		
+		<field	property="responsable"	depends="required,mask,minlength">
+		<arg0 key="label.responsable"/>
+		<arg1 name="mask" key="label.responsable" />
+		<arg2 name="minlength" key="label.responsable" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field property="telefono" depends="required,mask,maxlength">
+				<arg0 key="label.telefono" />
+				<msg name="mask" key="label.telefono.masktel" />
+				<arg1 name="mask" key="label.telefono" />
+				<arg2 name="maxlength" key="label.telefono" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]{4}\-[0-9]{4}$</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>9</var-value>
+				</var>
+			</field>
+		<field	property="direccion"	depends="required,mask,minlength">
+		<arg0 key="label.direccion"/>
+		<arg1 name="mask" key="label.direccion" />
+		<arg2 name="minlength" key="label.direccion" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="religion"	depends="required,mask,minlength">
+		<arg0 key="label.religion"/>
+		<arg1 name="mask" key="label.religion" />
+		<arg2 name="minlength" key="label.religion" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="nomemer"	depends="required,mask,minlength">
+		<arg0 key="label.nomemer"/>
+		<arg1 name="mask" key="label.nomemer" />
+		<arg2 name="minlength" key="label.nomemer" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="nombrep"	depends="required,mask,minlength">
+		<arg0 key="label.nombrep"/>
+		<arg1 name="mask" key="label.nombrep" />
+		<arg2 name="minlength" key="label.nombrep" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="duip"	depends="required,mask,minlength">
+		<arg0 key="label.dui"/>
+		<msg name="mask" key="label.duip.maskdui" />
+		<arg1 name="mask" key="label.duip" />
+		<arg2 name="minlength" key="label.duip" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]{8}\-[0-9]{1}$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="profesionp"	depends="required,mask,minlength">
+		<arg0 key="label.profesion"/>
+		<arg1 name="mask" key="label.profesion" />
+		<arg2 name="minlength" key="label.profesion" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="ltrabajop"	depends="required,mask,minlength">
+		<arg0 key="label.ltrabajo"/>
+		<arg1 name="mask" key="label.ltrabajo" />
+		<arg2 name="minlength" key="label.ltrabajo" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="telp"	depends="required,mask,minlength">
+		<arg0 key="label.tel"/>
+		<msg name="mask" key="label.tel.masktel" />
+		<arg1 name="mask" key="label.tel" />
+		<arg2 name="minlength" key="label.tel" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]{4}\-[0-9]{4}$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		
+		<field	property="nombrem"	depends="required,mask,minlength">
+		<arg0 key="label.nombrem"/>
+		<arg1 name="mask" key="label.nombrem" />
+		<arg2 name="minlength" key="label.nombrem" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="duim"	depends="required,mask,minlength">
+		<arg0 key="label.dui"/>
+		<msg name="mask" key="label.dui.maskdui" />
+		<arg1 name="mask" key="label.dui" />
+		<arg2 name="minlength" key="label.dui" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]{8}\-[0-9]{1}$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="profesionm"	depends="required,mask,minlength">
+		<arg0 key="label.profesion"/>
+		<arg1 name="mask" key="label.profesion" />
+		<arg2 name="minlength" key="label.profesion" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="ltrabajom" depends="required,mask,minlength">
+		<arg0 key="label.ltrabajo"/>
+		<arg1 name="mask" key="label.ltrabajo" />
+		<arg2 name="minlength" key="label.ltrabajo" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="telm"	depends="required,mask,minlength">
+		<arg0 key="label.tel"/>
+		<msg name="mask" key="label.tel.masktel" />
+		<arg1 name="mask" key="label.tel" />
+		<arg2 name="minlength" key="label.tel" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]{4}\-[0-9]{4}$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="diful" depends="required,mask,minlength">
+		<arg0 key="label.diful"/>
+		<arg1 name="mask" key="label.diful" />
+		<arg2 name="minlength" key="label.diful" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="enfe" depends="required,mask,minlength">
+		<arg0 key="label.enfe"/>
+		<arg1 name="mask" key="label.enfe" />
+		<arg2 name="minlength" key="label.enfe" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="alergias" depends="required,mask,minlength">
+		<arg0 key="label.alergias"/>
+		<arg1 name="mask" key="label.alergias" />
+		<arg2 name="minlength" key="label.alergias" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		<field	property="talla" depends="required,mask,minlength">
+		<arg0 key="label.talla"/>
+		<arg1 name="mask" key="label.talla" />
+		<arg2 name="minlength" key="label.talla" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]{1}\([0-9]{2}?)$</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>2</var-value>
+				</var>
+		</field>
+		
+		
+		<!-- FIN Matricula -->
+		</form>
+		
 	</formset>
+
 
 
 </form-validation>

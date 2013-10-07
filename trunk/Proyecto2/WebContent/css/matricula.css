@@ -1,6 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 
+#error {
+	color: rgb(255,0,0);
+	
+}
 #principal{
 			background-color:#FFFFFF;
 			width: 585px;
