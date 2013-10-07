@@ -12,6 +12,6 @@ public class MatriculaAction extends DispatchAction{
 
 			return mapping.findForward("matriculado");
 			
-			} 
+			}  
 
 }

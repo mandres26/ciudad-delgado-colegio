@@ -52,7 +52,7 @@ public class MatriculaForm extends ValidatorForm{
 	private String vc;
 	private String pesolb;
 	private String talla;
-	private String medif;
+	private String medif; 
 	private String infoad;
 	private String npartida;
 	private String nlibro;
