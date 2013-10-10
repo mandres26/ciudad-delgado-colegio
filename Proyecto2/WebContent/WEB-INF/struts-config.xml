@@ -9,7 +9,10 @@
 		<form-bean name="GradoForm" type="sv.edu.udb.form.GradoForm" />
 		<form-bean name="SeccionForm" type="sv.edu.udb.form.SeccionForm" />
 		<form-bean name="DocenteForm" type="sv.edu.udb.form.DocenteForm" />
-		<form-bean name="MatriculaForm" type="sv.edu.udb.form.MatriculaForm" />
+		<form-bean name="Matriculasave1Form" type="sv.edu.udb.form.Matriculasave1Form" />		
+		<form-bean name="Matriculasave2Form" type="sv.edu.udb.form.Matriculasave2Form" />
+		<form-bean name="Matriculasave3Form" type="sv.edu.udb.form.Matriculasave3Form" />
+		<form-bean name="Matriculasave4Form" type="sv.edu.udb.form.Matriculasave4Form" />
 	</form-beans>
 
 	<global-forwards>
@@ -33,10 +36,21 @@
 			parameter="method" scope="request" type="sv.edu.udb.action.DocenteAction">
 			<forward name="ingresado" path="/tiledocente.do" />
 		</action>
-		
-		<action name="MatriculaForm" input="/Matricula.jsp" path="/matricula" parameter="method"
-			scope="request" type="sv.edu.udb.action.MatriculaAction">
-			<forward name="matriculado" path="/index.jsp" />
+		<action name="Matriculasave1Form" input="/Matricula.jsp" path="/save1" parameter="method"
+			scope="session" type="sv.edu.udb.action.MatriculaAction">
+			<forward name="matriculado" path="/Matricula.jsp" />
+		</action>
+		<action name="Matriculasave2Form" input="/Matricula.jsp" path="/save2" parameter="method"
+			scope="session" type="sv.edu.udb.action.MatriculaAction">
+			<forward name="matriculado" path="/Matricula.jsp" />
+		</action>
+		<action name="Matriculasave3Form" input="/Matricula.jsp" path="/save3" parameter="method"
+			scope="session" type="sv.edu.udb.action.MatriculaAction">
+			<forward name="matriculado" path="/Matricula.jsp" />
+		</action>
+		<action name="Matriculasave4Form" input="/Matricula.jsp" path="/save4" parameter="method"
+			scope="session" type="sv.edu.udb.action.MatriculaAction">
+			<forward name="matriculado" path="/Matricula.jsp" />
 		</action>
 
 		<action path="/tiledocente" forward="docente" />

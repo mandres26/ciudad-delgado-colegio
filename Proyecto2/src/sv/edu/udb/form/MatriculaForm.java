@@ -1,7 +1,7 @@
 package sv.edu.udb.form;
-
 import org.apache.struts.validator.ValidatorForm;
 public class MatriculaForm extends ValidatorForm{
+
 	/**
 	 * 
 	 */
@@ -82,15 +82,19 @@ public class MatriculaForm extends ValidatorForm{
 	private String checes;
 	private String csangre;
 	private String corina;
-
+	
 	
 	
 	public String getApellidos() {
 		return apellidos;
 	}
+	
+
+
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
+
 	public String getNombres() {
 		return nombres;
 	}
@@ -540,11 +544,8 @@ public class MatriculaForm extends ValidatorForm{
 	}
 	public void setCorina(String corina) {
 		this.corina = corina;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	}	
 	
 	
-	
-}
+}	
+
