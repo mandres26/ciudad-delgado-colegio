@@ -1,3 +1,29 @@
+<script type="text/javascript" language="JavaScript">
+	function enviar(){
+	//	document.forms[0].method.value ="matricular"
+		//document.forms[0].submit();
+	}function salvar1(){
+		
+		document.forms[0].method.value ="save1"
+		document.forms[0].submit();
+		}
+		function salvar2(){
+		
+		document.forms[1].method.value ="save2"
+		document.forms[1].submit();
+		}
+		function salvar3(){
+		
+		document.forms[2].method.value ="save3"
+		document.forms[2].submit();
+	}
+		function salvar4(){
+		
+		document.forms[3].method.value ="save4"
+		document.forms[3].submit();
+		}
+	
+</script>
 <%@ include file="../JSP/top-tags.jsp"%>
 <div id="container">
       <div class="post">
@@ -30,10 +56,19 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
  - Es indespensable N° Telefonico fijo, pues en la institucion no hay salidas a numeros celulares.<br /><br />
 </div><br />
 
+<% 
+// session.getAttribute("apellidos");
+// 	System.out.println("Apellidos:"+session.getAttribute("apellidos"));
+// 	session.getAttribute("nombrep");
+// 	System.out.println("nombrep:"+session.getAttribute("nombrep"));
+// 	session.getAttribute("duip");
+// 	System.out.println("duip:"+session.getAttribute("duip"));
+	
+	%>
 
 <!--***************PII******************-->
 
-<html:form method="POST" action="/matricula">
+<html:form  method="post" action="/save1">
 <div class="texto" ><div id="p2"><p><strong>LLENAR SEGUN LA PARTIDA DE NACIMIENTO</strong></p></div><br /><br />
 
 <div id="t1">
@@ -53,13 +88,11 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <bean:message key="label.grado"/><html:select property="grado">
 </html:select>
 </div>
-<div id="turno1">
-<bean:message key="label.turnom"/><html:radio property="turno" value="si"></html:radio> 
-</div>
-<div id="turno2">
 
-  <bean:message key="label.turnov"/><html:radio property="turno" value="no"></html:radio> 
-  </div>
+<bean:message key="label.turnom"/><html:select property="turno">
+</html:select> 
+
+
 <div id="sexo">
 
 <bean:message key="label.sexo"/><html:select property="sexo">
@@ -88,9 +121,8 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 </div><br /><br />
 <div id="pare">
 <div id="pare1">
-<bean:message key="label.mama"/><html:checkbox property="mama" />&nbsp;&nbsp;
-<bean:message key="label.papa"/><html:checkbox property="papa" />&nbsp;&nbsp;
-<bean:message key="label.otros"/><html:checkbox property="otros" />&nbsp;&nbsp;
+<bean:message key="label.mama"/>&nbsp;<html:select property="parentesco">
+</html:select>&nbsp;&nbsp;
 <bean:message key="label.telefono"/><html:text property="telefono" size="8"/><div id="error"><html:errors property="telefono"/></div>
 </div>
 
@@ -124,7 +156,7 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <div id="religion">
 <div id="error"><html:errors property="religion"/></div>
 <bean:message key="label.religion"/><html:text property="religion"  size="30"/><br /><br />
-<bean:message key="label.bautizmo"/><html:checkbox property="bautizmo" />&nbsp;&nbsp;
+<bean:message key="label.bautizmo"/><html:checkbox property="bautizmo"/>&nbsp;&nbsp;
 <bean:message key="label.comunion"/><html:checkbox property="comunion" />&nbsp;&nbsp;
 <bean:message key="label.confirma"/><html:checkbox property="confirma" /><br /><br />
 <div id="error"><html:errors property="nomemer"/></div>
@@ -134,10 +166,12 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 </div><br />
 
  </div><br />
-
+<html:submit property="Salvar" onclick="salvar1()">Salvar</html:submit><br /><br />
+<html:hidden property="method" value=""/>
+</html:form>
 <!--*********************************-->
 <!--***********PIII****************-->
-
+<html:form  method="post" action="/save2">
 <div id="p3">
 
 <div id="datop">
@@ -189,7 +223,11 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 
 
 </div><bR />
+<html:submit property="Salvar" onclick="salvar2()">Salvar</html:submit><br /><br />
+<html:hidden property="method" value=""/>
+</html:form>
 <!--*********PIV******************-->
+<html:form  method="post" action="/save3">
 <div id="pt4">
 <bean:message key="label.salum"/>
 <bR />
@@ -197,12 +235,14 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <div id="neu"> <bean:message key="label.neu"/><html:checkbox property="neu" /></div>
 <div id="psi"> <bean:message key="label.psi"/><html:checkbox property="psi" /></div>
 <div id="aulg"><bean:message key="label.aulg"/><html:checkbox property="aulg" /></div>
-<div id="terapia"><bean:message key="label.terapia"/><html:checkbox property="terapia" /></div>
-
-
 </div><br /><br />
 
+
+
+
+
 <div id="pt4-">
+<bean:message key="label.terapia"/><br><br>
 <div id="neu"> <bean:message key="label.lenguaje"/><html:checkbox property="lenguaje" /></div>
 <div id="tedu"> <bean:message key="label.tedu"/><html:checkbox property="tedu" /></div>
 <div id="dificultad"><bean:message key="label.dificultad"/><html:checkbox property="dificultad" /></div><br />
@@ -226,9 +266,11 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 
 </div><br /><bR>
 
-
-
+<html:submit property="Salvar" onclick="salvar3()">Salvar</html:submit><br /><br />
+<html:hidden property="method" value=""/>
+</html:form>
 <!--*************PV************-->
+<html:form  method="post" action="/save4">
 <div id="pt4">
  <bean:message key="label.data"/><br><br>
 <bean:message key="label.npartida"/><html:text property="npartida"  size="2"/>&nbsp;&nbsp;
@@ -273,7 +315,10 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <bean:message key="label.csangre"/><html:checkbox property="csangre" />&nbsp;&nbsp;&nbsp;
 <bean:message key="label.corina"/><html:checkbox property="corina" /><br /><br /><br />
 </div>
-<html:submit value="Enviar"></html:submit>
+<html:submit property="Salvar" onclick="salvar4()">Salvar</html:submit><br /><br />
+<hr>
+<html:submit property="enviar" onclick="enviar()">Enviar</html:submit>
+<html:hidden property="method" value=""/>
 <!--*************************-->
 
 </html:form>
