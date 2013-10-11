@@ -116,7 +116,9 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <bean:message key="label.ndlp"/>
 <div id="in">
 <html:text property="responsable" size="50"/><br>
-<div id="error"><html:errors property="responsable"/></div>
+<div id="error"><html:errors property="responsable"/></div><br>
+<bean:message key="label.dui"/><html:text property="duirespo" />
+
 
 </div><br /><br />
 <div id="pare">
@@ -282,20 +284,16 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <bean:message key="label.inst"/><bR /><br /> <br />
 <div id="bc"><bean:message key="label.buscar"/><html:text property="buscar"  /></div><br />
 1:<html:text property="h1"  size="40"/> 
-<bean:message key="label.grado"/><html:text property="g1"  size="2"/> 
-<bean:message key="label.seccion"/><html:text property="s1"  size="2"/>
+
 <br /><br />
 2:<html:text property="h2"  size="40"/> 
-<bean:message key="label.grado"/><html:text property="g2"  size="2"/> 
-<bean:message key="label.grado"/><html:text property="s2"  size="2"/>
+
 <br /><br />
 3:<html:text property="h3"  size="40"/> 
-<bean:message key="label.grado"/><html:text property="g3"  size="2"/> 
-<bean:message key="label.grado"/><html:text property="s3"  size="2"/>
+
 <br /><br />
 4:<html:text property="h4"  size="40"/> 
-<bean:message key="label.grado"/><html:text property="g4"  size="2"/> 
-<bean:message key="label.grado"/><html:text property="s4"  size="2"/>
+
 <br /><br /><br />
 </div><br />
 <!--*************PVII************-->
