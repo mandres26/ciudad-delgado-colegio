@@ -14,17 +14,9 @@ public class Matriculasave4Form extends ValidatorForm{
 	private String ntomo;
 	private String buscar;
 	private String h1;
-	private String g1;
-	private String s1;
 	private String h2;
-	private String g2;
-	private String s2;
 	private String h3;
-	private String g3;
-	private String s3;
 	private String h4;
-	private String g4;
-	private String s4;
 	private String ccondu;
 	private String cmedi;
 	private String cparti;
@@ -67,36 +59,12 @@ public class Matriculasave4Form extends ValidatorForm{
 	}
 	public void setH1(String h1) {
 		this.h1 = h1;
-	}
-	public String getG1() {
-		return g1;
-	}
-	public void setG1(String g1) {
-		this.g1 = g1;
-	}
-	public String getS1() {
-		return s1;
-	}
-	public void setS1(String s1) {
-		this.s1 = s1;
-	}
+	}	
 	public String getH2() {
 		return h2;
 	}
 	public void setH2(String h2) {
 		this.h2 = h2;
-	}
-	public String getG2() {
-		return g2;
-	}
-	public void setG2(String g2) {
-		this.g2 = g2;
-	}
-	public String getS2() {
-		return s2;
-	}
-	public void setS2(String s2) {
-		this.s2 = s2;
 	}
 	public String getH3() {
 		return h3;
@@ -104,35 +72,11 @@ public class Matriculasave4Form extends ValidatorForm{
 	public void setH3(String h3) {
 		this.h3 = h3;
 	}
-	public String getG3() {
-		return g3;
-	}
-	public void setG3(String g3) {
-		this.g3 = g3;
-	}
-	public String getS3() {
-		return s3;
-	}
-	public void setS3(String s3) {
-		this.s3 = s3;
-	}
 	public String getH4() {
 		return h4;
 	}
 	public void setH4(String h4) {
 		this.h4 = h4;
-	}
-	public String getG4() {
-		return g4;
-	}
-	public void setG4(String g4) {
-		this.g4 = g4;
-	}
-	public String getS4() {
-		return s4;
-	}
-	public void setS4(String s4) {
-		this.s4 = s4;
 	}
 	public String getCcondu() {
 		return ccondu;

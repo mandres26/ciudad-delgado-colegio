@@ -1,12 +1,11 @@
 package sv.edu.udb.action;
 import javax.servlet.http.*;
-
 import org.apache.struts.action.*;
 import org.apache.struts.actions.DispatchAction;
-
 import sv.edu.udb.form.Matriculasave1Form;
 import sv.edu.udb.form.Matriculasave2Form;
 import sv.edu.udb.form.Matriculasave3Form;
+import sv.edu.udb.form.Matriculasave4Form;
 
 
 public class MatriculaAction extends DispatchAction{
@@ -33,8 +32,9 @@ public class MatriculaAction extends DispatchAction{
 		sesion.setAttribute("turno", matri.getTurno());
 		sesion.setAttribute("sexo", matri.getSexo());
 		sesion.setAttribute("fechan", matri.getFnacimiento());
-		sesion.setAttribute("edad", matri.getEdad());
+		sesion.setAttribute("edad", matri.getEdad()); //fin tabla alumno
 		sesion.setAttribute("responsable", matri.getResponsable());
+		sesion.setAttribute("duirespo", matri.getDuirespo());
 		sesion.setAttribute("parentesco", matri.getparentesco());
 		sesion.setAttribute("telefonopare", matri.getTelefono());
 		sesion.setAttribute("zona", matri.getZona());
@@ -92,6 +92,15 @@ public class MatriculaAction extends DispatchAction{
 		sesion.setAttribute("lenguaje", matri.getLenguaje());
 		sesion.setAttribute("terapia_educativa", matri.getTedu());
 		sesion.setAttribute("dificultad", matri.getDificultad());
+		sesion.setAttribute("diful", matri.getDiful());
+		sesion.setAttribute("enfe", matri.getEnfe());
+		sesion.setAttribute("alergias", matri.getAlergias());
+		sesion.setAttribute("vc", matri.getVc());
+		sesion.setAttribute("pesolb", matri.getPesolb());
+		sesion.setAttribute("talla", matri.getTalla());
+		sesion.setAttribute("medif", matri.getMedif());
+		sesion.setAttribute("infoadd", matri.getInfoad());
+		
 		
 			return mapping.findForward("matriculado");
 			
@@ -101,6 +110,28 @@ public class MatriculaAction extends DispatchAction{
 			HttpServletRequest request,
 			HttpServletResponse response)	
 			throws Exception {
+		Matriculasave4Form matri=(Matriculasave4Form) form;
+		HttpSession sesion=request.getSession();
+		sesion.setAttribute("napartida", matri.getNpartida());
+		sesion.setAttribute("nlibro", matri.getNlibro());
+		sesion.setAttribute("ntomo", matri.getNtomo());
+		sesion.setAttribute("buscar", matri.getBuscar());
+		sesion.setAttribute("h1", matri.getH1());
+		sesion.setAttribute("h2", matri.getH2());
+		sesion.setAttribute("h3", matri.getH3());
+		sesion.setAttribute("h4", matri.getH4());
+		sesion.setAttribute("ccondu", matri.getCcondu());
+		sesion.setAttribute("cmedi", matri.getCmedi());
+		sesion.setAttribute("cparti", matri.getCparti());
+		sesion.setAttribute("ccerti", matri.getCcerti());
+		sesion.setAttribute("cdiplo", matri.getCdiplo());
+		sesion.setAttribute("clibretap", matri.getClibretap());
+		sesion.setAttribute("clibretan", matri.getClibretan());
+		sesion.setAttribute("cboleta", matri.getCboleta());
+		sesion.setAttribute("ccarta", matri.getCcarta());
+		sesion.setAttribute("checes", matri.getCheces());
+		sesion.setAttribute("csangre", matri.getCsangre());
+		sesion.setAttribute("corina", matri.getCorina());
 		
 			return mapping.findForward("matriculado");
 			

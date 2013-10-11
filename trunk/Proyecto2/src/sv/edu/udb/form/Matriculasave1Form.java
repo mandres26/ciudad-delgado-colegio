@@ -14,6 +14,7 @@ public class Matriculasave1Form extends ValidatorForm{
 	private String fnacimiento;
 	private String edad;
 	private String responsable;
+	private String duirespo;
 	private String parentesco;
 	private String telefono;
 	private String direccion;
@@ -27,6 +28,7 @@ public class Matriculasave1Form extends ValidatorForm{
 	private String confirma;
 	private String nomemer;
 	private String telmer;
+	
 	
 	
 	
@@ -82,6 +84,12 @@ public class Matriculasave1Form extends ValidatorForm{
 	}
 	public void setResponsable(String responsable) {
 		this.responsable = responsable;
+	}
+	public String getDuirespo() {
+		return duirespo;
+	}
+	public void setDuirespo(String duirespo) {
+		this.duirespo = duirespo;
 	}
 	public String getparentesco() {
 		return parentesco;
