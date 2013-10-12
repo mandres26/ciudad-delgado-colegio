@@ -11,10 +11,11 @@ public class Matriculasave4Form extends ValidatorForm{
 	
 	private String npartida;
 	private String nlibro;
+	private String nfolio;
 	private String ntomo;
 	private String buscar;
 	private String h1;
-	private String h2;
+	private String h2;	
 	private String h3;
 	private String h4;
 	private String ccondu;
@@ -30,6 +31,12 @@ public class Matriculasave4Form extends ValidatorForm{
 	private String csangre;
 	private String corina;
 	
+	public String getNfolio() {
+		return nfolio;
+	}
+	public void setNfolio(String nfolio) {
+		this.nfolio = nfolio;
+	}
 	public String getNpartida() {
 		return npartida;
 	}

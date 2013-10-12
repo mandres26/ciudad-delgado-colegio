@@ -36,10 +36,11 @@
 			parameter="method" scope="request" type="sv.edu.udb.action.DocenteAction">
 			<forward name="ingresado" path="/tiledocente.do" />
 		</action>
-		<action name="Matriculasave1Form" input="/Matricula.jsp" path="/save1" parameter="method"
+		<action  name="Matriculasave1Form" input="matricula" path="/save1" parameter="method"
 			scope="session" type="sv.edu.udb.action.MatriculaAction">
-			<forward name="matriculado" path="/Matricula.jsp" />
+			<forward name="matriculado" path="matricula" />
 		</action>
+
 		<action name="Matriculasave2Form" input="/Matricula.jsp" path="/save2" parameter="method"
 			scope="session" type="sv.edu.udb.action.MatriculaAction">
 			<forward name="matriculado" path="/Matricula.jsp" />
