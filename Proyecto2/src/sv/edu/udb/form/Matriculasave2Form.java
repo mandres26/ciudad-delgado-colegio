@@ -12,15 +12,28 @@ public class Matriculasave2Form extends ValidatorForm{
 	private String profesionp;
 	private String ltrabajop;
 	private String telp;
+	private String Sexp;
 	private String nombrem;
 	private String duim;
 	private String profesionm;
 	private String ltrabajom;
 	private String telm;
+	private String Sexm;
 	
 	
 	
-	
+	public String getSexp() {
+		return Sexp;
+	}
+	public void setSexp(String sexp) {
+		Sexp = sexp;
+	}
+	public String getSexm() {
+		return Sexm;
+	}
+	public void setSexm(String sexm) {
+		Sexm = sexm;
+	}
 	public String getNombrep() {
 		return nombrep;
 	}

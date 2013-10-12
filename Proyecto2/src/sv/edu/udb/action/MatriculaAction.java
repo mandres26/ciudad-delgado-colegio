@@ -1,15 +1,31 @@
 package sv.edu.udb.action;
+import java.util.ArrayList;
+
 import javax.servlet.http.*;
+
 import org.apache.struts.action.*;
 import org.apache.struts.actions.DispatchAction;
+
 import sv.edu.udb.form.Matriculasave1Form;
 import sv.edu.udb.form.Matriculasave2Form;
 import sv.edu.udb.form.Matriculasave3Form;
 import sv.edu.udb.form.Matriculasave4Form;
+import sv.edu.udb.javabeans.GradoBean;
+import sv.edu.udb.modelo.LlenarCombosModelo;
 
 
 public class MatriculaAction extends DispatchAction{
+	public ActionForward llenar(ActionMapping mapping,
+			ActionForm form,
+			HttpServletRequest request,
+			HttpServletResponse response)
+			throws Exception {
+		LlenarCombosModelo llenar=new LlenarCombosModelo();
+		ArrayList<GradoBean> listagrado=llenar.llenearComboGrado();
+		request.setAttribute("grado", listagrado);		
 
+		return mapping.findForward("matriculado");
+	}
 	public ActionForward matricular(ActionMapping mapping,
 			ActionForm form,
 			HttpServletRequest request,
@@ -37,6 +53,7 @@ public class MatriculaAction extends DispatchAction{
 		sesion.setAttribute("duirespo", matri.getDuirespo());
 		sesion.setAttribute("parentesco", matri.getparentesco());
 		sesion.setAttribute("telefonopare", matri.getTelefono());
+		sesion.setAttribute("direccion", matri.getDireccion());//fin tabla responsable
 		sesion.setAttribute("zona", matri.getZona());
 		sesion.setAttribute("repite", matri.getRepite());
 		sesion.setAttribute("alumnot", matri.getAlumnot());
@@ -46,7 +63,7 @@ public class MatriculaAction extends DispatchAction{
 		sesion.setAttribute("comunion", matri.getComunion());
 		sesion.setAttribute("confirma", matri.getConfirma());
 		sesion.setAttribute("nomemer", matri.getNomemer());
-		sesion.setAttribute("telmer", matri.getTelmer());
+		sesion.setAttribute("telmer", matri.getTelmer());//fin tabla info_extra
 		
 		
 		String ape=(String) sesion.getAttribute("apellidos");
@@ -68,11 +85,13 @@ public class MatriculaAction extends DispatchAction{
 		sesion.setAttribute("profesionp", matri.getProfesionp());
 		sesion.setAttribute("trabajop", matri.getLtrabajop());
 		sesion.setAttribute("telp", matri.getTelp());
+		sesion.setAttribute("sexp", matri.getSexp());
 		sesion.setAttribute("nombrem", matri.getNombrem());
 		sesion.setAttribute("duim", matri.getDuim());
 		sesion.setAttribute("profesionm", matri.getProfesionm());
 		sesion.setAttribute("trabajom", matri.getLtrabajom());
 		sesion.setAttribute("telm", matri.getTelm());		
+		sesion.setAttribute("sexm", matri.getSexm());
 		
 		String ape1=(String) sesion.getAttribute("nombrep");
 		System.out.println("Session" +ape1);
@@ -114,6 +133,7 @@ public class MatriculaAction extends DispatchAction{
 		HttpSession sesion=request.getSession();
 		sesion.setAttribute("napartida", matri.getNpartida());
 		sesion.setAttribute("nlibro", matri.getNlibro());
+		sesion.setAttribute("nfolio", matri.getNfolio());
 		sesion.setAttribute("ntomo", matri.getNtomo());
 		sesion.setAttribute("buscar", matri.getBuscar());
 		sesion.setAttribute("h1", matri.getH1());

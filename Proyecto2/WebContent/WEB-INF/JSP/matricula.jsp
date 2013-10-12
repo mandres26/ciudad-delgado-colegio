@@ -87,6 +87,12 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <div id="grado">
 <bean:message key="label.grado"/><html:select property="grado">
 </html:select>
+<logic:present name="grado">
+		<html:select property="grado" styleClass="textBox">
+		<html:options collection="grado" property="id_grado"
+		labelProperty="grado" />
+		</html:select>
+		</logic:present>
 </div>
 
 <bean:message key="label.turnom"/><html:select property="turno">
@@ -179,7 +185,7 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <div id="datop">
 <div id="error"><html:errors property="nombrep"/></div>
 <bean:message key="label.nombrep"/><html:text property="nombrep"  size="50"/>
-</div><br />
+</div><br /><html:hidden property="sexp" value="1"/>
 <div id="piii">
 <div id="dui">
 <div id="error"><html:errors property="duip"/></div>
@@ -203,7 +209,7 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <div id="datop">
 <div id="error"><html:errors property="nombrem"/></div>
 <bean:message key="label.nombrem"/><html:text property="nombrem"  size="50"/>
-</div><br />
+</div><br /><html:hidden property="sexm" value="2"/>
 <div id="piii">
 <div id="dui">
 <div id="error"><html:errors property="duim"/></div>
@@ -277,6 +283,7 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
  <bean:message key="label.data"/><br><br>
 <bean:message key="label.npartida"/><html:text property="npartida"  size="2"/>&nbsp;&nbsp;
 <bean:message key="label.nlibro"/><html:text property="nlibro"  size="2"/>&nbsp;&nbsp;
+<bean:message key="label.nfolio"/><html:text property="nfolio"  size="2"/>&nbsp;&nbsp;
 <bean:message key="label.ntomo"/><html:text property="ntomo"  size="2"/><br/><br/>
 </div><br />
 <!--*************PVI************-->
