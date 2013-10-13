@@ -40,6 +40,11 @@ public class MatriculaAction extends DispatchAction{
 			HttpServletRequest request,
 			HttpServletResponse response)	
 			throws Exception {
+		
+		LlenarCombosModelo llenar=new LlenarCombosModelo();
+		ArrayList<GradoBean> listagrado=llenar.llenearComboGrado();
+		request.setAttribute("grado", listagrado);
+		
 		Matriculasave1Form matri=(Matriculasave1Form) form;
 		HttpSession sesion=request.getSession();
 		sesion.setAttribute("apellidos", matri.getApellidos());
