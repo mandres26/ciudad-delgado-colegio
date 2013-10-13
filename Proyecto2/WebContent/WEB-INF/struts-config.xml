@@ -41,17 +41,17 @@
 			<forward name="matriculado" path="matricula" />
 		</action>
 
-		<action name="Matriculasave2Form" input="/Matricula.jsp" path="/save2" parameter="method"
+		<action name="Matriculasave2Form" input="matricula" path="/save2" parameter="method"
 			scope="session" type="sv.edu.udb.action.MatriculaAction">
-			<forward name="matriculado" path="/Matricula.jsp" />
+			<forward name="matriculado" path="matricula" />
 		</action>
-		<action name="Matriculasave3Form" input="/Matricula.jsp" path="/save3" parameter="method"
+		<action name="Matriculasave3Form" input="matricula" path="/save3" parameter="method"
 			scope="session" type="sv.edu.udb.action.MatriculaAction">
-			<forward name="matriculado" path="/Matricula.jsp" />
+			<forward name="matriculado" path="matricula" />
 		</action>
-		<action name="Matriculasave4Form" input="/Matricula.jsp" path="/save4" parameter="method"
+		<action name="Matriculasave4Form" input="matricula" path="/save4" parameter="method"
 			scope="session" type="sv.edu.udb.action.MatriculaAction">
-			<forward name="matriculado" path="/Matricula.jsp" />
+			<forward name="matriculado" path="matricula" />
 		</action>
 
 		<action path="/tiledocente" forward="docente" />
