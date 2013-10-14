@@ -6,12 +6,12 @@ import javax.servlet.http.*;
 import org.apache.struts.action.*;
 import org.apache.struts.actions.DispatchAction;
 
-import sv.edu.udb.form.Matriculasave1Form;
-import sv.edu.udb.form.Matriculasave2Form;
-import sv.edu.udb.form.Matriculasave3Form;
-import sv.edu.udb.form.Matriculasave4Form;
+import sv.edu.udb.form.MatriculaForm;
 import sv.edu.udb.javabeans.GradoBean;
+import sv.edu.udb.javabeans.SexoBean;
+import sv.edu.udb.javabeans.TurnoBean;
 import sv.edu.udb.modelo.LlenarCombosModelo;
+import sv.edu.udb.modelo.MatriculaModelo;
 
 
 public class MatriculaAction extends DispatchAction{
@@ -20,43 +20,49 @@ public class MatriculaAction extends DispatchAction{
 			HttpServletRequest request,
 			HttpServletResponse response)
 			throws Exception {
+		
 		LlenarCombosModelo llenar=new LlenarCombosModelo();
 		ArrayList<GradoBean> listagrado=llenar.llenearComboGrado();
-		request.setAttribute("grado", listagrado);		
+		request.setAttribute("grado", listagrado);	
+		
+		ArrayList<TurnoBean> listaturno=llenar.llenearComboTurno();
+		request.setAttribute("turno", listaturno);	
+		
+		ArrayList<SexoBean> listasexo=llenar.llenearComboSexo();
+		request.setAttribute("sexo", listasexo);	
 
 		return mapping.findForward("matriculado");
 	}
-	public ActionForward matricular(ActionMapping mapping,
+	public ActionForward matricula(ActionMapping mapping,
 			ActionForm form,
 			HttpServletRequest request,
-			HttpServletResponse response)	
+			HttpServletResponse response)
 			throws Exception {
-		
-			return mapping.findForward("matriculado");
-			
-			}  
-	public ActionForward save1(ActionMapping mapping,
-			ActionForm form,
-			HttpServletRequest request,
-			HttpServletResponse response)	
-			throws Exception {
-		
+		System.out.println("Ola k ase XD ");
 		LlenarCombosModelo llenar=new LlenarCombosModelo();
 		ArrayList<GradoBean> listagrado=llenar.llenearComboGrado();
-		request.setAttribute("grado", listagrado);
+		request.setAttribute("grado", listagrado);	
 		
-		Matriculasave1Form matri=(Matriculasave1Form) form;
+		ArrayList<TurnoBean> listaturno=llenar.llenearComboTurno();
+		request.setAttribute("turno", listaturno);	
+		
+		ArrayList<SexoBean> listasexo=llenar.llenearComboSexo();
+		request.setAttribute("sexo", listasexo);
+			
+		MatriculaForm matri=(MatriculaForm) form;
 		HttpSession sesion=request.getSession();
+		String codigo="DA090044";
+		sesion.setAttribute("codigo", codigo);
 		sesion.setAttribute("apellidos", matri.getApellidos());
 		sesion.setAttribute("nombres", matri.getNombres());
 		sesion.setAttribute("grado", matri.getGrado());
 		sesion.setAttribute("turno", matri.getTurno());
 		sesion.setAttribute("sexo", matri.getSexo());
-		sesion.setAttribute("fechan", matri.getFnacimiento());
+		sesion.setAttribute("fnacimiento", matri.getFnacimiento());
 		sesion.setAttribute("edad", matri.getEdad()); //fin tabla alumno
 		sesion.setAttribute("responsable", matri.getResponsable());
 		sesion.setAttribute("duirespo", matri.getDuirespo());
-		sesion.setAttribute("parentesco", matri.getparentesco());
+		sesion.setAttribute("parentesco", matri.getParentesco());
 		sesion.setAttribute("telefonopare", matri.getTelefono());
 		sesion.setAttribute("direccion", matri.getDireccion());//fin tabla responsable
 		sesion.setAttribute("zona", matri.getZona());
@@ -69,22 +75,7 @@ public class MatriculaAction extends DispatchAction{
 		sesion.setAttribute("confirma", matri.getConfirma());
 		sesion.setAttribute("nomemer", matri.getNomemer());
 		sesion.setAttribute("telmer", matri.getTelmer());//fin tabla info_extra
-		
-		
-		String ape=(String) sesion.getAttribute("apellidos");
-		System.out.println("Session" +ape);
-		
-		
-			return mapping.findForward("matriculado");
-			
-			}  
-	public ActionForward save2(ActionMapping mapping,
-			ActionForm form,
-			HttpServletRequest request,
-			HttpServletResponse response)	
-			throws Exception {
-		Matriculasave2Form matri=(Matriculasave2Form) form;
-		HttpSession sesion=request.getSession();
+
 		sesion.setAttribute("nombrep", matri.getNombrep());
 		sesion.setAttribute("duip", matri.getDuip());
 		sesion.setAttribute("profesionp", matri.getProfesionp());
@@ -97,19 +88,7 @@ public class MatriculaAction extends DispatchAction{
 		sesion.setAttribute("trabajom", matri.getLtrabajom());
 		sesion.setAttribute("telm", matri.getTelm());		
 		sesion.setAttribute("sexm", matri.getSexm());
-		
-		String ape1=(String) sesion.getAttribute("nombrep");
-		System.out.println("Session" +ape1);
-			return mapping.findForward("matriculado");
-			
-			}  
-	public ActionForward save3(ActionMapping mapping,
-			ActionForm form,
-			HttpServletRequest request,
-			HttpServletResponse response)	
-			throws Exception {
-		Matriculasave3Form matri=(Matriculasave3Form) form;
-		HttpSession sesion=request.getSession();
+
 		sesion.setAttribute("neurologo", matri.getNeu());
 		sesion.setAttribute("psicologo", matri.getPsi());
 		sesion.setAttribute("audio_lenguaje", matri.getAulg());
@@ -124,18 +103,7 @@ public class MatriculaAction extends DispatchAction{
 		sesion.setAttribute("talla", matri.getTalla());
 		sesion.setAttribute("medif", matri.getMedif());
 		sesion.setAttribute("infoadd", matri.getInfoad());
-		
-		
-			return mapping.findForward("matriculado");
-			
-			}  
-	public ActionForward save4(ActionMapping mapping,
-			ActionForm form,
-			HttpServletRequest request,
-			HttpServletResponse response)	
-			throws Exception {
-		Matriculasave4Form matri=(Matriculasave4Form) form;
-		HttpSession sesion=request.getSession();
+
 		sesion.setAttribute("napartida", matri.getNpartida());
 		sesion.setAttribute("nlibro", matri.getNlibro());
 		sesion.setAttribute("nfolio", matri.getNfolio());
@@ -158,7 +126,52 @@ public class MatriculaAction extends DispatchAction{
 		sesion.setAttribute("csangre", matri.getCsangre());
 		sesion.setAttribute("corina", matri.getCorina());
 		
+		
+		MatriculaModelo mati=new MatriculaModelo();
+		if(mati.save1(request)){
+					
+		}if(mati.save2(request)){
+			
+		}if(mati.save3(request)){
+			request.setAttribute("mensaje", "Exito");
 			return mapping.findForward("matriculado");
+		}if(mati.save4(request)){
+			request.setAttribute("mensaje", "Exito");
+			return mapping.findForward("matriculado");
+		}if(mati.save5(request)){
+			request.setAttribute("mensaje", "Exito");
+			return mapping.findForward("matriculado");
+		}if(mati.save6(request)){
+			request.setAttribute("mensaje", "Exito");
+			return mapping.findForward("matriculado");
+		}if(mati.save7(request)){
+			request.setAttribute("mensaje", "Exito");
+			return mapping.findForward("matriculado");
+		}if(mati.save8(request)){
+			request.setAttribute("mensaje", "Exito");
+			return mapping.findForward("matriculado");
+		}if(mati.save9(request)){
+			request.setAttribute("mensaje", "Exito");
+			return mapping.findForward("matriculado");
+		}if(mati.save10(request)){
+			request.setAttribute("mensaje", "Exito");
+			return mapping.findForward("matriculado");
+		}if(mati.save11(request)){
+			request.setAttribute("mensaje", "Exito");
+			return mapping.findForward("matriculado");
+		}if(mati.save12(request)){
+			request.setAttribute("mensaje", "Exito");
+			return mapping.findForward("matriculado");
+		}
+		
+		else{
+			request.setAttribute("mensaje", "Fracaso");
+			return mapping.findForward("matriculado");
+			}
+
+		
+		
+		
 			
 			}  
 

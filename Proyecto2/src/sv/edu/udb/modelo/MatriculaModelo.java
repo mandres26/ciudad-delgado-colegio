@@ -30,33 +30,37 @@ public class MatriculaModelo extends Coneccion {
 		String nombres=(String) sesion.getAttribute("nombres");
 		String sexo=(String) sesion.getAttribute("sexo");
 		String fnacimiento=(String) sesion.getAttribute("fnacimiento");
-		String turno=(String) sesion.getAttribute("turno");
 		String edad=(String) sesion.getAttribute("edad");
 		String direccion=(String) sesion.getAttribute("direccion");	
 		String grado=(String) sesion.getAttribute("grado");	
-		
+		System.out.println("Ola k ase save1 apellido "+apellidos);
+		System.out.println("Ola k ase save1 nombre"+nombres);
+		System.out.println("Ola k ase save1 direccion"+direccion);
+		System.out.println("Ola k ase save1 edad"+edad);
+		System.out.println("Ola k ase save1 fecha"+fnacimiento);
+		System.out.println("Ola k ase save1 sexo"+sexo);
+		System.out.println("Ola k ase save1 grado"+grado);
 		try {
 			
-			
-			String query="insert into alumno values(?,?,?,?,?,?,?,?,?)";
+			String query;
+			query ="insert into alumno(codigo_alumno,nombre_alumno,apellido_alumno,direccion,edad,nacimiento,id_genero,id_grado) values('";
 			st=cn.prepareStatement(query);
-			//st.setString(1, codigo);
-			st.setString(2, nombres);
-			st.setString(3, apellidos);
-			st.setString(4, direccion);
-			st.setString(5, edad);
-			st.setString(6, fnacimiento);
-			st.setString(7, turno);
-			st.setString(8, sexo);
-			st.setString(9, grado);
-			st.executeUpdate(query);
+			query+=sesion.getAttribute("codigo")+"','"+
+					sesion.getAttribute("nombres")+"','"+
+					sesion.getAttribute("apellidos")+"','"+
+					sesion.getAttribute("direccion")+"','"+
+					sesion.getAttribute("edad")+"','"+
+					sesion.getAttribute("fnacimiento")+"','"+
+					sesion.getAttribute("sexo")+"','"+
+					sesion.getAttribute("grado")+"')";
+					st.executeUpdate(query);
             
 			
             estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save1"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		return estado;
 		
@@ -73,24 +77,30 @@ public class MatriculaModelo extends Coneccion {
 		String telefonopare=(String) sesion.getAttribute("telefonopare");
 		String direccion=(String) sesion.getAttribute("direccion");
 		String codigo=(String) sesion.getAttribute("codigo");
-		
+		System.out.println("Ola k ase save2 nombre "+responsable);
+		System.out.println("Ola k ase save2 dui"+duirespo);
+		System.out.println("Ola k ase save2 parentesc"+parentesco);
+		System.out.println("Ola k ase save2 telefono"+telefonopare);
+		System.out.println("Ola k ase save2 direccon"+direccion);
+		System.out.println("Ola k ase save2 codigo"+codigo);
 		try {
 			
-			String query="insert into reponsable values(null,?,?,?,?,?,?)";
+			String query;
+			query="insert into responsable(nombre,dui,parentesco,telefono,direccion,codigo_alumno) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, responsable);
-			st.setString(3, duirespo);
-			st.setString(3, parentesco);
-			st.setString(4, telefonopare);
-			st.setString(5, direccion);
-			st.setString(6, codigo);
+			query+= sesion.getAttribute("responsable")+"','"+
+					sesion.getAttribute("duirespo")+"','"+
+					sesion.getAttribute("parentesco")+"','"+
+					sesion.getAttribute("telefonopare")+"','"+
+					sesion.getAttribute("direccion")+"','"+
+					sesion.getAttribute("codigo")+"')";
 			
 			st.executeUpdate(query);
             estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save2"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		return estado;
 		
@@ -112,29 +122,64 @@ public class MatriculaModelo extends Coneccion {
 		String nomemer=(String) sesion.getAttribute("nomemer");
 		String telmer=(String) sesion.getAttribute("telmer");
 		String codigo=(String) sesion.getAttribute("codigo");
-
+		
+		System.out.println("Ola k ase save2 zona "+zona);
+		System.out.println("Ola k ase save2 repite"+repite);
+		System.out.println("Ola k ase save2 alumnot"+alumnot);
+		System.out.println("Ola k ase save2 estudiopv"+estudiopv);
+		System.out.println("Ola k ase save2 religion"+religion);
+		System.out.println("Ola k ase save2 bautizmo"+bautizo);
+		System.out.println("Ola k ase save2 comunion"+comunion);
+		System.out.println("Ola k ase save2 confirma"+confirma);
+		System.out.println("Ola k ase save2 nomemer"+nomemer);
+		System.out.println("Ola k ase save2 telmer"+telmer);
+		System.out.println("Ola k ase save2 codigo"+codigo);
+		
+		
+		
+		
+		String bauti="";
+		String comu="";
+		String confi="";
+		if(sesion.getAttribute("bautizo")== "on"){
+			 bauti="1";
+		}else{
+			bauti="2";
+		}if(sesion.getAttribute("comunion")== "on"){
+			comu="1";
+		}else{
+			comu="2";
+		}if(sesion.getAttribute("confrima")== "on"){
+			confi="1";
+		}else{
+			confi="2";
+		}
+		
+		
+		
 		try {
-			
-			String query="insert into info_extra values(null,?,?,?,?,?,?,?,?,?,?,?)";
+			String query;
+			query="insert into info_extra(zona,alumno_trabaja,repite_grado,estudio_parvularia,religion,bautizo,comunion,confirma,"
+					+ "persona_emergencia,telefono,codigo_alumno) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, zona);
-			st.setString(3, alumnot);
-			st.setString(4, repite);
-			st.setString(5, estudiopv);
-			st.setString(6, religion);
-			st.setString(7, bautizo);
-			st.setString(8, comunion);
-			st.setString(9, confirma);
-			st.setString(10, nomemer);
-			st.setString(11, telmer);
-			st.setString(12, codigo);
-            st.executeUpdate(query);
+			query+= sesion.getAttribute("zona")+"','"+
+					sesion.getAttribute("alumnot")+"','"+
+					sesion.getAttribute("repite")+"','"+
+					sesion.getAttribute("estudiopv")+"','"+
+					sesion.getAttribute("religion")+"','"+
+					bauti+"','"+
+					comu+"','"+
+					confi+"','"+
+					sesion.getAttribute("nomemer")+"','"+
+					sesion.getAttribute("telmer")+"','"+
+					sesion.getAttribute("codigo")+"')";
+           			st.executeUpdate(query);
 			
             estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save3"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		return estado;
 		
@@ -168,9 +213,9 @@ public class MatriculaModelo extends Coneccion {
 			
 			estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save4"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		return estado;
 		
@@ -204,9 +249,9 @@ public class MatriculaModelo extends Coneccion {
 			
 			estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save5"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		return estado;
 		
@@ -259,9 +304,9 @@ public class MatriculaModelo extends Coneccion {
 			
 			estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save6"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		return estado;
 		
@@ -291,9 +336,9 @@ public class MatriculaModelo extends Coneccion {
 			
 			estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save7"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		return estado;
 		
@@ -310,7 +355,7 @@ public class MatriculaModelo extends Coneccion {
 			estado = false;
 		try {
 			
-			String query="insert into hermanos(null,?,?)";
+			String query="insert into hermanos values(null,?,?)";
 			st=cn.prepareStatement(query);
 			st.setString(2, codigo);
 			st.setString(3, h1);
@@ -320,9 +365,9 @@ public class MatriculaModelo extends Coneccion {
 			
 			estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save8"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		}
 		return estado;
@@ -340,7 +385,7 @@ public class MatriculaModelo extends Coneccion {
 			estado = false;
 		try {
 			
-			String query="insert into hermanos(null,?,?)";
+			String query="insert into hermanos values(null,?,?)";
 			st=cn.prepareStatement(query);
 			st.setString(2, codigo);
 			st.setString(3, h2);
@@ -350,9 +395,9 @@ public class MatriculaModelo extends Coneccion {
 			
 			estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save9"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		}
 		return estado;
@@ -369,7 +414,7 @@ public class MatriculaModelo extends Coneccion {
 			estado = false;
 		try {
 			
-			String query="insert into hermanos(null,?,?)";
+			String query="insert into hermanos values(null,?,?)";
 			st=cn.prepareStatement(query);
 			st.setString(2, codigo);
 			st.setString(3, h3);
@@ -379,9 +424,9 @@ public class MatriculaModelo extends Coneccion {
 			
 			estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save10"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		}
 		return estado;
@@ -399,7 +444,7 @@ public class MatriculaModelo extends Coneccion {
 			estado = false;
 		try {
 			
-			String query="insert into hermanos(null,?,?)";
+			String query="insert into hermanos values(null,?,?)";
 			st=cn.prepareStatement(query);
 			st.setString(2, codigo);
 			st.setString(3, h4);
@@ -409,9 +454,9 @@ public class MatriculaModelo extends Coneccion {
 			
 			estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save11"+ex);
 		}finally{
-			cierraConexion();
+			
 			}
 		}
 		return estado;
@@ -439,7 +484,7 @@ public class MatriculaModelo extends Coneccion {
 		
 		try {
 			
-			String query="insert into doc_presentados(null,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String query="insert into doc_presentados values(null,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			st=cn.prepareStatement(query);
 			st.setString(2, ccondu);
 			st.setString(3, cmedi);
@@ -460,7 +505,7 @@ public class MatriculaModelo extends Coneccion {
 			
 			estado= true;
 		}catch(SQLException ex){
-			System.out.println(ex);
+			System.out.println("save12"+ex);
 		}finally{
 			cierraConexion();
 			}

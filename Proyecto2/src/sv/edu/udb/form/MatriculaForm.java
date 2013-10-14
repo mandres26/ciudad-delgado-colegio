@@ -1,6 +1,7 @@
 package sv.edu.udb.form;
+import org.apache.struts.action.ActionForm;
 import org.apache.struts.validator.ValidatorForm;
-public class MatriculaForm extends ValidatorForm{
+public class MatriculaForm extends ActionForm{
 
 	/**
 	 * 
@@ -14,9 +15,8 @@ public class MatriculaForm extends ValidatorForm{
 	private String fnacimiento;
 	private String edad;
 	private String responsable;
-	private String mama;
-	private String papa;
-	private String otros;
+	private String duirespo;
+	private String parentesco;
 	private String telefono;
 	private String direccion;
 	private String zona;
@@ -28,21 +28,22 @@ public class MatriculaForm extends ValidatorForm{
 	private String comunion;
 	private String confirma;
 	private String nomemer;
-	private String telmer;
+	private String telmer;//save1
 	private String nombrep;
 	private String duip;
 	private String profesionp;
 	private String ltrabajop;
 	private String telp;
+	private String Sexp;
 	private String nombrem;
 	private String duim;
 	private String profesionm;
 	private String ltrabajom;
 	private String telm;
+	private String Sexm;//save2
 	private String neu;
 	private String psi;
 	private String aulg;
-	private String terapia;
 	private String lenguaje;
 	private String tedu;
 	private String dificultad;
@@ -53,23 +54,16 @@ public class MatriculaForm extends ValidatorForm{
 	private String pesolb;
 	private String talla;
 	private String medif; 
-	private String infoad;
+	private String infoad;//save3
 	private String npartida;
 	private String nlibro;
+	private String nfolio;
 	private String ntomo;
 	private String buscar;
 	private String h1;
-	private String g1;
-	private String s1;
-	private String h2;
-	private String g2;
-	private String s2;
+	private String h2;	
 	private String h3;
-	private String g3;
-	private String s3;
 	private String h4;
-	private String g4;
-	private String s4;
 	private String ccondu;
 	private String cmedi;
 	private String cparti;
@@ -83,18 +77,12 @@ public class MatriculaForm extends ValidatorForm{
 	private String csangre;
 	private String corina;
 	
-	
-	
 	public String getApellidos() {
 		return apellidos;
 	}
-	
-
-
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-
 	public String getNombres() {
 		return nombres;
 	}
@@ -122,7 +110,7 @@ public class MatriculaForm extends ValidatorForm{
 	public String getFnacimiento() {
 		return fnacimiento;
 	}
-	public void setFnacimineto(String fnacimiento) {
+	public void setFnacimiento(String fnacimiento) {
 		this.fnacimiento = fnacimiento;
 	}
 	public String getEdad() {
@@ -137,23 +125,17 @@ public class MatriculaForm extends ValidatorForm{
 	public void setResponsable(String responsable) {
 		this.responsable = responsable;
 	}
-	public String getMama() {
-		return mama;
+	public String getDuirespo() {
+		return duirespo;
 	}
-	public void setMama(String mama) {
-		this.mama = mama;
+	public void setDuirespo(String duirespo) {
+		this.duirespo = duirespo;
 	}
-	public String getPapa() {
-		return papa;
+	public String getParentesco() {
+		return parentesco;
 	}
-	public void setPapa(String papa) {
-		this.papa = papa;
-	}
-	public String getOtros() {
-		return otros;
-	}
-	public void setOtros(String otros) {
-		this.otros = otros;
+	public void setParentesco(String parentesco) {
+		this.parentesco = parentesco;
 	}
 	public String getTelefono() {
 		return telefono;
@@ -257,6 +239,12 @@ public class MatriculaForm extends ValidatorForm{
 	public void setTelp(String telp) {
 		this.telp = telp;
 	}
+	public String getSexp() {
+		return Sexp;
+	}
+	public void setSexp(String sexp) {
+		Sexp = sexp;
+	}
 	public String getNombrem() {
 		return nombrem;
 	}
@@ -287,6 +275,12 @@ public class MatriculaForm extends ValidatorForm{
 	public void setTelm(String telm) {
 		this.telm = telm;
 	}
+	public String getSexm() {
+		return Sexm;
+	}
+	public void setSexm(String sexm) {
+		Sexm = sexm;
+	}
 	public String getNeu() {
 		return neu;
 	}
@@ -304,12 +298,6 @@ public class MatriculaForm extends ValidatorForm{
 	}
 	public void setAulg(String aulg) {
 		this.aulg = aulg;
-	}
-	public String getTerapia() {
-		return terapia;
-	}
-	public void setTerapia(String terapia) {
-		this.terapia = terapia;
 	}
 	public String getLenguaje() {
 		return lenguaje;
@@ -389,6 +377,12 @@ public class MatriculaForm extends ValidatorForm{
 	public void setNlibro(String nlibro) {
 		this.nlibro = nlibro;
 	}
+	public String getNfolio() {
+		return nfolio;
+	}
+	public void setNfolio(String nfolio) {
+		this.nfolio = nfolio;
+	}
 	public String getNtomo() {
 		return ntomo;
 	}
@@ -407,35 +401,11 @@ public class MatriculaForm extends ValidatorForm{
 	public void setH1(String h1) {
 		this.h1 = h1;
 	}
-	public String getG1() {
-		return g1;
-	}
-	public void setG1(String g1) {
-		this.g1 = g1;
-	}
-	public String getS1() {
-		return s1;
-	}
-	public void setS1(String s1) {
-		this.s1 = s1;
-	}
 	public String getH2() {
 		return h2;
 	}
 	public void setH2(String h2) {
 		this.h2 = h2;
-	}
-	public String getG2() {
-		return g2;
-	}
-	public void setG2(String g2) {
-		this.g2 = g2;
-	}
-	public String getS2() {
-		return s2;
-	}
-	public void setS2(String s2) {
-		this.s2 = s2;
 	}
 	public String getH3() {
 		return h3;
@@ -443,35 +413,11 @@ public class MatriculaForm extends ValidatorForm{
 	public void setH3(String h3) {
 		this.h3 = h3;
 	}
-	public String getG3() {
-		return g3;
-	}
-	public void setG3(String g3) {
-		this.g3 = g3;
-	}
-	public String getS3() {
-		return s3;
-	}
-	public void setS3(String s3) {
-		this.s3 = s3;
-	}
 	public String getH4() {
 		return h4;
 	}
 	public void setH4(String h4) {
 		this.h4 = h4;
-	}
-	public String getG4() {
-		return g4;
-	}
-	public void setG4(String g4) {
-		this.g4 = g4;
-	}
-	public String getS4() {
-		return s4;
-	}
-	public void setS4(String s4) {
-		this.s4 = s4;
 	}
 	public String getCcondu() {
 		return ccondu;
@@ -544,7 +490,14 @@ public class MatriculaForm extends ValidatorForm{
 	}
 	public void setCorina(String corina) {
 		this.corina = corina;
-	}	
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
+	
+	
 	
 	
 }	
