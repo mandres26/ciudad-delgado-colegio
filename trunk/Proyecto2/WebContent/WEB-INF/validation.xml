@@ -138,7 +138,7 @@
 		</form>
 		
 		<!-- Form Matricula SAVE1-->
-		<form name="Matriculasave1Form">
+		<form name="MatriculaForm">
 		<field property="apellidos"	depends="required,mask,minlength">
 		<arg0 key="label.apellidos"/>
 		<arg1 name="mask" key="label.apellidos" />
@@ -232,12 +232,7 @@
 					<var-value>2</var-value>
 				</var>
 		</field>
-		<!-- FIN Matricula -->
-		</form>
-		
-		
-		<!-- MAtricula SAVE2 -->
-		<form name="Matriculasave2Form">
+
 		<field	property="nombrep"	depends="required,mask,minlength">
 		<arg0 key="label.nombrep"/>
 		<arg1 name="mask" key="label.nombrep" />
@@ -373,11 +368,7 @@
 					<var-value>2</var-value>
 				</var>
 		</field>
-		<!-- FIN Matricula -->
-		</form>
-		
-		<!-- MAtricula SAVE3 -->
-		<form name="Matriculasave3Form">
+
 		<field	property="diful" depends="required,mask,minlength">
 		<arg0 key="label.diful"/>
 		<arg1 name="mask" key="label.diful" />

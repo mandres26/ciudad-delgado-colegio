@@ -1,29 +1,3 @@
-<script type="text/javascript" language="JavaScript">
-	function enviar(){
-	//	document.forms[0].method.value ="matricular"
-		//document.forms[0].submit();
-	}function salvar1(){
-		
-		document.forms[0].method.value ="save1"
-		document.forms[0].submit();
-		}
-		function salvar2(){
-		
-		document.forms[1].method.value ="save2"
-		document.forms[1].submit();
-		}
-		function salvar3(){
-		
-		document.forms[2].method.value ="save3"
-		document.forms[2].submit();
-	}
-		function salvar4(){
-		
-		document.forms[3].method.value ="save4"
-		document.forms[3].submit();
-		}
-	
-</script>
 <%@ include file="../JSP/top-tags.jsp"%>
 <div id="container">
       <div class="post">
@@ -68,7 +42,7 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 
 <!--***************PII******************-->
 
-<html:form  method="post" action="/save1">
+<html:form  method="post" action="/matricula">
 <div class="texto" ><div id="p2"><p><strong>LLENAR SEGUN LA PARTIDA DE NACIMIENTO</strong></p></div><br /><br />
 
 <div id="t1">
@@ -85,24 +59,33 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 </div><br /><br />
 <div id="dato1">
 <div id="grado">
-<bean:message key="label.grado"/><html:select property="grado">
-</html:select>
-<logic:present name="grado">
+<bean:message key="label.grado"/>
+		<logic:present name="grado">
 		<html:select property="grado" styleClass="textBox">
 		<html:options collection="grado" property="id_grado"
-		labelProperty="grado" />
+ 		labelProperty="grado" />
 		</html:select>
 		</logic:present>
 </div>
 
-<bean:message key="label.turnom"/><html:select property="turno">
-</html:select> 
+<bean:message key="label.turnom"/>
+		<logic:present name="turno">
+		<html:select property="turno" styleClass="textBox">
+		<html:options collection="turno" property="id_turno"
+		labelProperty="turno" /> 
+		</html:select>
+		</logic:present>
 
 
 <div id="sexo">
 
-<bean:message key="label.sexo"/><html:select property="sexo">
-</html:select>
+<bean:message key="label.sexo"/>
+		<logic:present name="sexo">
+		<html:select property="sexo" styleClass="textBox">
+		<html:options collection="sexo" property="id_sexo"
+		labelProperty="sexo" /> 
+		</html:select> 
+		</logic:present>
 </div>
 </div><br /><br /><br />
 
@@ -142,23 +125,23 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 </div><br /><br />
 <div id="dato3">
 <div id="zona">
-<bean:message key="label.rural"/><html:radio property="zona" value="si"></html:radio>&nbsp;&nbsp;
-<bean:message key="label.urbana"/><html:radio property="zona" value="no"></html:radio>
+<bean:message key="label.rural"/><html:radio property="zona" value="1"></html:radio>&nbsp;&nbsp;
+<bean:message key="label.urbana"/><html:radio property="zona" value="2"></html:radio>
 
 </div>
 
 <div id="repite">
-<bean:message key="label.repite"/><html:radio property="repite" value="si"></html:radio>    &nbsp;&nbsp;
-<bean:message key="label.no"/><html:radio property="repite" value="no"></html:radio>
+<bean:message key="label.repite"/><html:radio property="repite" value="1"></html:radio>    &nbsp;&nbsp;
+<bean:message key="label.no"/><html:radio property="repite" value="2"></html:radio>
 </div>
 </div><br /><br />
 <div id="dato4">
 <div id="traba">
-<bean:message key="label.alumnot"/><html:radio property="alumnot" value="si"></html:radio>
-<bean:message key="label.no"/><html:radio property="alumnot" value="no"></html:radio>
+<bean:message key="label.alumnot"/><html:radio property="alumnot" value="1"></html:radio>
+<bean:message key="label.no"/><html:radio property="alumnot" value="2"></html:radio>
   <br /><br />
-   <bean:message key="label.estudiopv"/><html:radio property="estutiopv" value="si"></html:radio>
-  <bean:message key="label.no"/><html:radio property="estutiopv" value="no"></html:radio>
+   <bean:message key="label.estudiopv"/><html:radio property="estutiopv" value="1"></html:radio>
+  <bean:message key="label.no"/><html:radio property="estutiopv" value="2"></html:radio>
 </div>
 </div><BR /> <br />
 <div id="religion">
@@ -174,12 +157,12 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 </div><br />
 
  </div><br />
-<html:submit property="Salvar" onclick="salvar1()">Salvar</html:submit><br /><br />
-<html:hidden property="method" value=""/>
-</html:form>
+
+
+
 <!--*********************************-->
 <!--***********PIII****************-->
-<html:form  method="post" action="/save2">
+
 <div id="p3">
 
 <div id="datop">
@@ -231,11 +214,11 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 
 
 </div><bR />
-<html:submit property="Salvar" onclick="salvar2()">Salvar</html:submit><br /><br />
-<html:hidden property="method" value=""/>
-</html:form>
+
+
+
 <!--*********PIV******************-->
-<html:form  method="post" action="/save3">
+
 <div id="pt4">
 <bean:message key="label.salum"/>
 <bR />
@@ -274,11 +257,11 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 
 </div><br /><bR>
 
-<html:submit property="Salvar" onclick="salvar3()">Salvar</html:submit><br /><br />
-<html:hidden property="method" value=""/>
-</html:form>
+
+
+
 <!--*************PV************-->
-<html:form  method="post" action="/save4">
+
 <div id="pt4">
  <bean:message key="label.data"/><br><br>
 <bean:message key="label.npartida"/><html:text property="npartida"  size="2"/>&nbsp;&nbsp;
@@ -320,10 +303,10 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <bean:message key="label.csangre"/><html:checkbox property="csangre" />&nbsp;&nbsp;&nbsp;
 <bean:message key="label.corina"/><html:checkbox property="corina" /><br /><br /><br />
 </div>
-<html:submit property="Salvar" onclick="salvar4()">Salvar</html:submit><br /><br />
+
 <hr>
-<html:submit property="enviar" onclick="enviar()">Enviar</html:submit>
-<html:hidden property="method" value=""/>
+<html:submit property="enviar" >Enviar</html:submit>
+<html:hidden property="method" value="matricula"/>
 <!--*************************-->
 
 </html:form>
