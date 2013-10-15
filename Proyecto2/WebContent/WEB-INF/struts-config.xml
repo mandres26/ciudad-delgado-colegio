@@ -10,10 +10,6 @@
 		<form-bean name="SeccionForm" type="sv.edu.udb.form.SeccionForm" />
 		<form-bean name="DocenteForm" type="sv.edu.udb.form.DocenteForm" />
 		<form-bean name="MatriculaForm" type="sv.edu.udb.form.MatriculaForm" />
-		<form-bean name="Matriculasave1Form" type="sv.edu.udb.form.Matriculasave1Form" />		
-		<form-bean name="Matriculasave2Form" type="sv.edu.udb.form.Matriculasave2Form" />
-		<form-bean name="Matriculasave3Form" type="sv.edu.udb.form.Matriculasave3Form" />
-		<form-bean name="Matriculasave4Form" type="sv.edu.udb.form.Matriculasave4Form" />
 	</form-beans>
 
 	<global-forwards>
