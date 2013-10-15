@@ -279,16 +279,16 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <div id="pt4">
 <bean:message key="label.inst"/><bR /><br /> <br />
 <div id="bc"><bean:message key="label.buscar"/><html:text property="buscar"  /></div><br />
-1:<html:text property="h1"  size="40"/> 
+1:<html:text property="h1"/> 
 
 <br /><br />
-2:<html:text property="h2"  size="40"/> 
+2:<html:text property="h2"/> 
 
 <br /><br />
-3:<html:text property="h3"  size="40"/> 
+3:<html:text property="h3"/> 
 
 <br /><br />
-4:<html:text property="h4"  size="40"/> 
+4:<html:text property="h4"/> 
 
 <br /><br /><br />
 </div><br />

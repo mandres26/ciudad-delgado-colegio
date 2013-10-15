@@ -365,14 +365,15 @@ public class MatriculaModelo extends Coneccion {
 	}//fin save7
 	
 	public boolean save8(HttpServletRequest request){
-		boolean estado = true;
+		boolean estado = false;
 		Connection cn=getConexion();
 		PreparedStatement st=null;
 		HttpSession sesion=request.getSession();
 		String codigo=(String) sesion.getAttribute("codigo");
 		String h1=(String) sesion.getAttribute("h1");
-		if(h1 != null){
-			estado = false;
+		System.out.println("h1"+sesion.getAttribute("h1"));
+		if(sesion.getAttribute("h1") != " "){
+			
 		try {
 			
 			String query;
@@ -395,14 +396,15 @@ public class MatriculaModelo extends Coneccion {
 	}//fin save8
 	
 	public boolean save9(HttpServletRequest request){
-		boolean estado = true;
+		boolean estado = false;
 		Connection cn=getConexion();
 		PreparedStatement st=null;
 		HttpSession sesion=request.getSession();
 		String codigo=(String) sesion.getAttribute("codigo");
 		String h2=(String) sesion.getAttribute("h2");
-		if(h2 != null){
-			estado = false;
+		System.out.println("h2"+sesion.getAttribute("h2"));
+		if(sesion.getAttribute("h2") != " "){
+			
 		try {
 			String query;
 			query="insert into hermanos(codigo_alumno,codigo_hermano) values('";
@@ -426,14 +428,14 @@ public class MatriculaModelo extends Coneccion {
 		
 	}//fin save9
 	public boolean save10(HttpServletRequest request){
-		boolean estado = true;
+		boolean estado = false;
 		Connection cn=getConexion();
 		PreparedStatement st=null;
 		HttpSession sesion=request.getSession();
 		String codigo=(String) sesion.getAttribute("codigo");
 		String h3=(String) sesion.getAttribute("h3");
-		if(h3 != null){
-			estado = false;
+		System.out.println("h3"+sesion.getAttribute("h3"));
+		if(sesion.getAttribute("h3") != " "){
 		try {
 			String query;
 			query="insert into hermanos(codigo_alumno,codigo_hermano) values('";
@@ -458,14 +460,14 @@ public class MatriculaModelo extends Coneccion {
 	}//fin save10
 	
 	public boolean save11(HttpServletRequest request){
-		boolean estado = true;
+		boolean estado = false;
 		Connection cn=getConexion();
 		PreparedStatement st=null;
 		HttpSession sesion=request.getSession();
 		String codigo=(String) sesion.getAttribute("codigo");;
 		String h4=(String) sesion.getAttribute("h4");
-		if(h4 != null){
-			estado = false;
+		System.out.println("h4"+sesion.getAttribute("h4"));
+		if(sesion.getAttribute("h4") != " "){
 		try {
 			String query;
 			query="insert into hermanos(codigo_alumno,codigo_hermano) values('";
@@ -576,6 +578,8 @@ public class MatriculaModelo extends Coneccion {
 		return estado;
 		
 	}//fin save12
+	
+	
 	
 	public boolean cerrar(HttpServletRequest request){
 		boolean estado=true;
