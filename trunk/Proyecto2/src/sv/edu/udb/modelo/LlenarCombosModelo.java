@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import sv.edu.udb.javabeans.GradoBean;
+import sv.edu.udb.javabeans.ParentescoBean;
 import sv.edu.udb.javabeans.SexoBean;
 import sv.edu.udb.javabeans.TurnoBean;
 
@@ -20,6 +21,7 @@ public class LlenarCombosModelo extends Coneccion {
 	ArrayList<GradoBean> listagrado=new ArrayList<GradoBean>();
 	ArrayList<TurnoBean> listaturno=new ArrayList<TurnoBean>();
 	ArrayList<SexoBean> listasexo=new ArrayList<SexoBean>();
+	ArrayList<ParentescoBean> listapare=new ArrayList<ParentescoBean>();
 	
 	public ArrayList<GradoBean> llenearComboGrado() {
 		String sql="Select * from grado";
@@ -72,11 +74,30 @@ public class LlenarCombosModelo extends Coneccion {
 		listasexo.add(cat);
 		System.out.println(rs.getString(1) + " " +rs.getString(2));
 		}
-		cierraConexion();
+		
 		} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 		}
 		return listasexo;
+	}
+	public ArrayList<ParentescoBean> llenearComboPare() {
+		String sql="Select * from parentesco";
+		Connection cn=getConexion();
+		PreparedStatement st=null;
+		try {
+		st=cn.prepareStatement(sql);
+		rs=st.executeQuery();
+		while(rs.next()){
+			ParentescoBean  cat=new ParentescoBean(rs.getString(1),rs.getString(2));
+		listapare.add(cat);
+		System.out.println(rs.getString(1) + " " +rs.getString(2));
+		}
+		cierraConexion();
+		} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		}
+		return listapare;
 	}
 }
