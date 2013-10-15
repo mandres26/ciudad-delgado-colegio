@@ -112,8 +112,14 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 </div><br /><br />
 <div id="pare">
 <div id="pare1">
-<bean:message key="label.mama"/>&nbsp;<html:select property="parentesco">
-</html:select>&nbsp;&nbsp;
+<bean:message key="label.mama"/>&nbsp;
+<logic:present name="parentesco">
+		<html:select property="parentesco" styleClass="textBox">
+		<html:options collection="parentesco" property="id_parentesco"
+		labelProperty="parentesco" /> 
+		</html:select> 
+		</logic:present>
+&nbsp;&nbsp;
 <bean:message key="label.telefono"/><html:text property="telefono" size="8"/><div id="error"><html:errors property="telefono"/></div>
 </div>
 
@@ -242,8 +248,8 @@ TELEFAX: 2276-9676 Email: cecmealiet@hotmail.com
 <div id="error"><html:errors property="enfe"/></div><div id="error"><html:errors property="alergias"/></div>
 <bean:message key="label.enfe"/><html:text property="enfe"  size="20"/>&nbsp;&nbsp;
 <bean:message key="label.alergias"/><html:text property="alergias"  size="20"/><br /><br />
-<bean:message key="label.vcsi"/><html:radio property="vc" value="si"></html:radio>&nbsp;&nbsp;
-<bean:message key="label.no"/><html:radio property="vc" value="no"></html:radio>&nbsp;&nbsp;
+<bean:message key="label.vcsi"/><html:radio property="vc" value="1"></html:radio>&nbsp;&nbsp;
+<bean:message key="label.no"/><html:radio property="vc" value="2"></html:radio>&nbsp;&nbsp;
 <bean:message key="label.pesolb"/><html:text property="pesolb"  size="1"/><br /><br />
 <div id="error"><html:errors property="talla"/></div>
 <bean:message key="label.talla"/><html:text property="talla"  size="1"/><br /> <br />

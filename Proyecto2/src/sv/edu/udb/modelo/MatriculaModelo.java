@@ -116,9 +116,9 @@ public class MatriculaModelo extends Coneccion {
 		String alumnot=(String) sesion.getAttribute("alumnot");
 		String estudiopv=(String) sesion.getAttribute("estudiopv");
 		String religion=(String) sesion.getAttribute("religion");
-		String bautizo=(String) sesion.getAttribute("bautizo");
+		String bautizo=(String) sesion.getAttribute("bautizmo");
 		String comunion=(String) sesion.getAttribute("comunion");
-		String confirma=(String) sesion.getAttribute("confrima");
+		String confirma=(String) sesion.getAttribute("confirma");
 		String nomemer=(String) sesion.getAttribute("nomemer");
 		String telmer=(String) sesion.getAttribute("telmer");
 		String codigo=(String) sesion.getAttribute("codigo");
@@ -138,21 +138,17 @@ public class MatriculaModelo extends Coneccion {
 		
 		
 		
-		String bauti="";
-		String comu="";
-		String confi="";
-		if(sesion.getAttribute("bautizo")== "on"){
+		String bauti="2";
+		String comu="2";
+		String confi="2";
+		if(sesion.getAttribute("bautizmo")!= null){
 			 bauti="1";
-		}else{
-			bauti="2";
-		}if(sesion.getAttribute("comunion")== "on"){
+		
+		}if(sesion.getAttribute("comunion")!= null){
 			comu="1";
-		}else{
-			comu="2";
-		}if(sesion.getAttribute("confrima")== "on"){
+		
+		}if(sesion.getAttribute("confirma")!= null){
 			confi="1";
-		}else{
-			confi="2";
 		}
 		
 		
@@ -199,16 +195,16 @@ public class MatriculaModelo extends Coneccion {
 		String codigo=(String) sesion.getAttribute("codigo");
 		try {
 			
-			String query="insert into pares_familia values(null,?,?,?,?,?,?,?)";
+			String query;
+			query="insert into padres_familia(nombre,profesion,lugar_trabajo,telefono,dui,codigo_alumno,sexo) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, nombrep);
-			st.setString(3, profesionp);
-			st.setString(4, trabajop);
-			st.setString(5, telp);
-			st.setString(6, duip);
-			st.setString(7, codigo);
-			st.setString(8, sexp);
-			
+			query+= sesion.getAttribute("nombrep")+"','"+
+					sesion.getAttribute("profesionp")+"','"+
+					sesion.getAttribute("trabajop")+"','"+
+					sesion.getAttribute("telp")+"','"+
+					sesion.getAttribute("duip")+"','"+
+					sesion.getAttribute("codigo")+"','"+
+					sesion.getAttribute("sexp")+"')";
             st.executeUpdate(query);
 			
 			estado= true;
@@ -234,16 +230,16 @@ public class MatriculaModelo extends Coneccion {
 		String sexm=(String) sesion.getAttribute("sexm");
 		String codigo=(String) sesion.getAttribute("codigo");
 		try {
-			
-			String query="insert into pares_familia values(null,?,?,?,?,?,?,?)";
+			String query;
+			query="insert into padres_familia(nombre,profesion,lugar_trabajo,telefono,dui,codigo_alumno,sexo) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, nombrem);
-			st.setString(3, profesionm);
-			st.setString(4, trabajom);
-			st.setString(5, telm);
-			st.setString(6, duim);
-			st.setString(7, codigo);
-			st.setString(8, sexm);
+			query+= sesion.getAttribute("nombrem")+"','"+
+					sesion.getAttribute("profesionm")+"','"+
+					sesion.getAttribute("trabajom")+"','"+
+					sesion.getAttribute("telm")+"','"+
+					sesion.getAttribute("duim")+"','"+
+					sesion.getAttribute("codigo")+"','"+
+					sesion.getAttribute("sexm")+"')";
 			
             st.executeUpdate(query);
 			
@@ -271,36 +267,60 @@ public class MatriculaModelo extends Coneccion {
 		String diful=(String) sesion.getAttribute("diful");
 		String enfe=(String) sesion.getAttribute("enfe");
 		String alergias=(String) sesion.getAttribute("alergias");
-		String vc=(String) sesion.getAttribute("cv");
+		String vc=(String) sesion.getAttribute("vc");
 		String pesolb=(String) sesion.getAttribute("pesolb");
 		String talla=(String) sesion.getAttribute("talla");
 		String medif=(String) sesion.getAttribute("medif");
 		String infoadd=(String) sesion.getAttribute("infoadd");
 		String codigo=(String) sesion.getAttribute("codigo");
+		System.out.println("Vacuna"+vc);
+		
+		String neu="2";
+		String psi="2";
+		String audi="2";
+		String leng="2";
+		String tera="2";
+		String difi="2";
+		if(sesion.getAttribute("neurologo")!= null){
+			neu="1";
+		}if(sesion.getAttribute("psicologo") != null){
+			psi="1";
+		}if(sesion.getAttribute("audio_lenguaje") != null){
+			audi="1";
+		}if(sesion.getAttribute("lenguaje") != null){
+			leng="1";
+		}if(sesion.getAttribute("terapia_educativa") != null){
+			tera="1";
+		}if(sesion.getAttribute("dificultad") != null){
+			difi="1";
+		}
+		
+		
 		
 		
 		try {
 			
-			String query="insert into especiales values(null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String query;
+			query="insert into especiales(neurologo,psicologico,audicion_lengueje,terapia_lenguaje,"
+					+ "terapia_auditiva,dificultad_motora,discapacidad,enfermedad_cronica,alergias,"
+					+ "vacunacion,peso,talla,medicamento,info_adicional,codigo) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, neurologo);
-			st.setString(3, psicologo);
-			st.setString(4, audio_lenguaje);
-			st.setString(5, lenguaje);
-			st.setString(6, terapia_educativa);
-			st.setString(7, dificultad);
-			st.setString(8, diful);
-			st.setString(9, enfe);
-			st.setString(10, alergias);
-			st.setString(11, vc);
-			st.setString(12, pesolb);
-			st.setString(13, talla);
-			st.setString(14, medif);
-			st.setString(15, infoadd);
-			st.setString(16, codigo);
-			
-		
-            st.executeUpdate(query);
+			query+= neu+"','"+
+					psi+"','"+
+					audi+"','"+
+					leng+"','"+
+					tera+"','"+
+					difi+"','"+
+					sesion.getAttribute("diful")+"','"+
+					sesion.getAttribute("enfe")+"','"+
+					sesion.getAttribute("alergias")+"','"+
+					sesion.getAttribute("vc")+"','"+
+					sesion.getAttribute("pesolb")+"','"+
+					sesion.getAttribute("talla")+"','"+
+					sesion.getAttribute("medif")+"','"+
+					sesion.getAttribute("infoadd")+"','"+
+					sesion.getAttribute("codigo")+"')";	
+            		st.executeUpdate(query);
 			
 			estado= true;
 		}catch(SQLException ex){
@@ -324,15 +344,15 @@ public class MatriculaModelo extends Coneccion {
 		String codigo=(String) sesion.getAttribute("codigo");
 		try {
 			
-			String query="insert into partida values(null,?,?,?,?,?)";
+			String query;
+			query="insert into partida(numero_partida,numero_libro,numero_folio,tomo,codigo_alumno) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, npartida);
-			st.setString(3, nlibro);
-			st.setString(4, nfolio);
-			st.setString(5, ntomo);
-			st.setString(6, codigo);
-		
-            st.executeUpdate(query);
+			query+= sesion.getAttribute("npartida")+"','"+
+					sesion.getAttribute("nlibro")+"','"+
+					sesion.getAttribute("nfolio")+"','"+
+					sesion.getAttribute("ntomo")+"','"+
+					sesion.getAttribute("codigo")+"')";
+            		st.executeUpdate(query);
 			
 			estado= true;
 		}catch(SQLException ex){
@@ -355,13 +375,13 @@ public class MatriculaModelo extends Coneccion {
 			estado = false;
 		try {
 			
-			String query="insert into hermanos values(null,?,?)";
+			String query;
+			query="insert into hermanos(codigo_alumno,codigo_hermano) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, codigo);
-			st.setString(3, h1);
-			
-		
-            st.executeUpdate(query);
+			st=cn.prepareStatement(query);
+			query+= sesion.getAttribute("codigo")+"','"+
+					sesion.getAttribute("h1")+"')";	
+            		st.executeUpdate(query);
 			
 			estado= true;
 		}catch(SQLException ex){
@@ -384,11 +404,13 @@ public class MatriculaModelo extends Coneccion {
 		if(h2 != null){
 			estado = false;
 		try {
-			
-			String query="insert into hermanos values(null,?,?)";
+			String query;
+			query="insert into hermanos(codigo_alumno,codigo_hermano) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, codigo);
-			st.setString(3, h2);
+			st=cn.prepareStatement(query);
+			query+= sesion.getAttribute("codigo")+"','"+
+					sesion.getAttribute("h2")+"')";	
+            		st.executeUpdate(query);
 			
 		
             st.executeUpdate(query);
@@ -413,11 +435,13 @@ public class MatriculaModelo extends Coneccion {
 		if(h3 != null){
 			estado = false;
 		try {
-			
-			String query="insert into hermanos values(null,?,?)";
+			String query;
+			query="insert into hermanos(codigo_alumno,codigo_hermano) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, codigo);
-			st.setString(3, h3);
+			st=cn.prepareStatement(query);
+			query+= sesion.getAttribute("codigo")+"','"+
+					sesion.getAttribute("h3")+"')";	
+            		st.executeUpdate(query);
 			
 		
             st.executeUpdate(query);
@@ -443,11 +467,12 @@ public class MatriculaModelo extends Coneccion {
 		if(h4 != null){
 			estado = false;
 		try {
-			
-			String query="insert into hermanos values(null,?,?)";
+			String query;
+			query="insert into hermanos(codigo_alumno,codigo_hermano) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, codigo);
-			st.setString(3, h4);
+			query+= sesion.getAttribute("codigo")+"','"+
+					sesion.getAttribute("h4")+"')";	
+            		st.executeUpdate(query);
 			
 		
             st.executeUpdate(query);
@@ -481,25 +506,64 @@ public class MatriculaModelo extends Coneccion {
 		String csangre=(String) sesion.getAttribute("csangre");
 		String corina=(String) sesion.getAttribute("corina");
 		String codigo=(String) sesion.getAttribute("codigo");
+		String condu="2";
+		String medi="2";
+		String parti="2";
+		String certi="2";
+		String diplo="2";
+		String libretap="2";
+		String libretan="2";
+		String boleta="2";
+		String carta="2";
+		String heces="2";
+		String sangre="2";
+		String orina="2";
+			if(sesion.getAttribute("ccondu") != null){
+				condu="1";
+			}if(sesion.getAttribute("cmedi") != null){
+				medi="1";
+			}if(sesion.getAttribute("cparti") != null){
+				parti="1";
+			}if(sesion.getAttribute("ccerti") != null){
+				certi="1";
+			}if(sesion.getAttribute("cdiplo") != null){
+				diplo="1";
+			}if(sesion.getAttribute("clibretap") != null){
+				libretap="1";
+			}if(sesion.getAttribute("clibretan") != null){
+				libretan="1";
+			}if(sesion.getAttribute("cboleta") != null){
+				boleta="1";
+			}if(sesion.getAttribute("ccarta") != null){
+				carta="1";
+			}if(sesion.getAttribute("csangre") != null){
+				sangre="1";
+			}if(sesion.getAttribute("checes") != null){
+				heces="1";
+			}if(sesion.getAttribute("corina") != null){
+				orina="1";
+			}
 		
 		try {
 			
-			String query="insert into doc_presentados values(null,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String query;
+			query="insert into doc_presentado(constacia_conducta,constancia_medico_psicologico,copia_partida,"
+					+ "certificado_anterior,copia_diploma_parvularia,libreta_padres,libreta_notas,boleta_pago,"
+					+ "carta_compromiso,examen_heces,examen_sangre,examen_orina,codigo_alumno) values('";
 			st=cn.prepareStatement(query);
-			st.setString(2, ccondu);
-			st.setString(3, cmedi);
-			st.setString(4, cparti);
-			st.setString(5, ccerti);
-			st.setString(6, cdiplo);
-			st.setString(7, clibretap);
-			st.setString(8, clibretan);
-			st.setString(9, cboleta);
-			st.setString(10, ccarta);
-			st.setString(11, checes);
-			st.setString(12, csangre);
-			st.setString(13, corina);
-			st.setString(14, codigo);
-			
+			query+= condu+"','"+
+					medi+"','"+
+					parti+"','"+
+					certi+"','"+
+					diplo+"','"+
+					libretap+"','"+
+					libretan+"','"+
+					boleta+"','"+
+					carta+"','"+
+					heces+"','"+
+					sangre+"','"+
+					orina+"','"+
+					sesion.getAttribute("codigo")+"')";
 		
             st.executeUpdate(query);
 			
@@ -512,4 +576,13 @@ public class MatriculaModelo extends Coneccion {
 		return estado;
 		
 	}//fin save12
+	
+	public boolean cerrar(HttpServletRequest request){
+		boolean estado=true;
+		HttpSession sesion=request.getSession();
+		
+		sesion.invalidate();
+		return estado;
+	}
+	
 }
