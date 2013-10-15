@@ -168,6 +168,8 @@ public class MatriculaAction extends DispatchAction{
 			
 		}if(mati.save12(request)){
 			request.setAttribute("mensaje", "Exito");
+		}if(mati.cerrar(request)){
+			request.setAttribute("mensaje", "Exito");
 			return mapping.findForward("matriculado");
 		}
 		else{

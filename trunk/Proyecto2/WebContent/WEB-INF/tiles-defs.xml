@@ -50,6 +50,10 @@
 <put name="titulo" value=".::Centro Escolar ::."/>
 <put name="cuerpo" value="/WEB-INF/JSP/buscar-alumno.jsp"/>
 </definition>
+<definition name="ver" extends="principal">
+<put name="titulo" value=".::Centro Escolar ::."/>
+<put name="cuerpo" value="/WEB-INF/JSP/ver-alumno.jsp"/>
+</definition>
 
 </tiles-definitions>
 

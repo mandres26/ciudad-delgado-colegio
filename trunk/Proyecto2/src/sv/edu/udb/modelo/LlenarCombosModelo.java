@@ -11,6 +11,7 @@ import sv.edu.udb.javabeans.GradoBean;
 import sv.edu.udb.javabeans.ParentescoBean;
 import sv.edu.udb.javabeans.SexoBean;
 import sv.edu.udb.javabeans.TurnoBean;
+import sv.edu.udb.javabeans.VerBean;
 
 public class LlenarCombosModelo extends Coneccion {
 	
@@ -24,6 +25,7 @@ public class LlenarCombosModelo extends Coneccion {
 	ArrayList<SexoBean> listasexo=new ArrayList<SexoBean>();
 	ArrayList<ParentescoBean> listapare=new ArrayList<ParentescoBean>();
 	ArrayList<BuscaAlumnoBean> listaalumno=new ArrayList<BuscaAlumnoBean>();
+	ArrayList<VerBean> veralumno=new ArrayList<VerBean>();
 	public ArrayList<GradoBean> llenearComboGrado() {
 		String sql="Select * from grado";
 		Connection cn=getConexion();
@@ -120,5 +122,27 @@ public class LlenarCombosModelo extends Coneccion {
 		e.printStackTrace();
 		}
 		return listaalumno;
+	}
+	
+	
+	public ArrayList<VerBean> VerAlumno() {
+		String sql="Select * from alumno";
+		Connection cn=getConexion();
+		PreparedStatement st=null;
+		try {
+		st=cn.prepareStatement(sql);
+		rs=st.executeQuery();
+		while(rs.next()){
+			VerBean cat=new VerBean(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),
+					rs.getString(5),rs.getString(6),rs.getString(7));
+		veralumno.add(cat);
+		System.out.println(rs.getString(1) + " " +rs.getString(2)+ " " +rs.getString(3));
+		}
+		cierraConexion();
+		} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		}
+		return veralumno;
 	}
 }

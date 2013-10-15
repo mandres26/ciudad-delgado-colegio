@@ -11,6 +11,7 @@
 		<form-bean name="DocenteForm" type="sv.edu.udb.form.DocenteForm" />
 		<form-bean name="MatriculaForm" type="sv.edu.udb.form.MatriculaForm" />
 		<form-bean name="BuscarForm" type="sv.edu.udb.form.BuscarForm" />
+		<form-bean name="VerForm" type="sv.edu.udb.form.VerForm" />
 	</form-beans>
 
 	<global-forwards>
@@ -58,6 +59,10 @@
 		<action  name="BuscarForm" input="buscar" path="/buscar" parameter="method"
 			scope="request" type="sv.edu.udb.action.BuscarAction">
 			<forward name="listaalumno" path="buscar" />
+		</action>
+		<action  name="VerForm" path="/ver" parameter="method"
+			scope="request" type="sv.edu.udb.action.BuscarAction">
+			<forward name="veralumno" path="ver" />
 		</action>
 		
 		<action path="/tiledocente" forward="docente" />
