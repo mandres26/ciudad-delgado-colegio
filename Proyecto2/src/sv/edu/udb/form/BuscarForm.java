@@ -1,6 +1,8 @@
 package sv.edu.udb.form;
 
-public class BuscarForm {
+import org.apache.struts.action.ActionForm;
+
+public class BuscarForm extends ActionForm {
 	
 	private String iniciar;
 	

@@ -33,8 +33,17 @@
 		<display:column property="nombre" title="Nombres" />
 		<display:column property="apellido" title="Apellidos"/>
 		<display:column title="Ver">
-		<c:out value="${listaalumno.codigo}"/>
-		</display:column>c
+		<!-- ********************************************************** -->
+		<html:form action="/ver"> 
+		<html:hidden property="codigo" value="${listaalumno.codigo} "/>
+		<html:submit property="ver">Ver</html:submit>
+		
+		<html:hidden property="method" value="ver"/>
+		</html:form>
+		<!-- ********************************************************** -->
+						
+		
+		</display:column>
 		</display:table>
 		
 		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
