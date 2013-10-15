@@ -173,9 +173,7 @@ public class MatriculaAction extends DispatchAction{
 		else{
 			request.setAttribute("mensaje", "Fracaso");
 			return mapping.findForward("matriculado");
-			}
-
-		
+			}	
 		
 		
 			
