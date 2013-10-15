@@ -25,5 +25,4 @@ public class SeccionForm extends ValidatorForm {
 	public void setCupo(String cupo) {
 		this.cupo = cupo;
 	}
-
 }

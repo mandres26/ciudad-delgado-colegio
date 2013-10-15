@@ -5,7 +5,6 @@ import org.apache.struts.validator.ValidatorForm;
 
 
 public class DocenteForm extends ValidatorForm {
-
 	/**
 	 * 
 	 */
@@ -15,6 +14,15 @@ public class DocenteForm extends ValidatorForm {
 	private String direccion;
 	private String telefono;
 	private String correo;
+	private String genero;
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -55,5 +63,4 @@ public class DocenteForm extends ValidatorForm {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-
 }

@@ -19,18 +19,33 @@
 	</global-forwards>
 
 	<action-mappings>
-		<action name="GradoForm" path="/grado" input="/tilegrado.do" parameter="method"
+		<action name="GradoForm" path="/grado" input="/gradocombos.do?method=combo" parameter="method"
 			scope="request" type="sv.edu.udb.action.GradoAction">
 			<forward name="ingresado" path="/tilegrado.do" />
 		</action>
-
+		
+		<action path="/gradocombos" parameter="method" 
+			scope="request" type="sv.edu.udb.action.GradoAction">
+			<forward name="ingresado" path="/tilegrado.do" />
+		</action>
+		
 		<action name="SeccionForm" path="/seccion" input="/tileseccion.do" parameter="method"
 			scope="request" type="sv.edu.udb.action.SeccionAction">
 			<forward name="ingresado" path="/tileseccion.do" />
 		</action>
 
-		<action name="DocenteForm" path="/docente" input="/tiledocente.do"
+		<action name="DocenteForm" path="/docente" input="/docentegenero.do?method=combo"
 			parameter="method" scope="request" type="sv.edu.udb.action.DocenteAction">
+			<forward name="ingresado" path="/tiledocente.do" />
+		</action>
+		
+		<action path="/docentegenero" parameter="method" 
+			scope="request" type="sv.edu.udb.action.DocenteAction">
+			<forward name="ingresado" path="/tiledocente.do" />
+		</action>
+		
+		<action path="/docentedisplay" parameter="method" 
+			 scope="request" type="sv.edu.udb.action.DocenteAction">
 			<forward name="ingresado" path="/tiledocente.do" />
 		</action>
 		
