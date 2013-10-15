@@ -8,7 +8,6 @@ public class GradoForm extends ValidatorForm {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String grado;
-	private String materia;
 	private String seccion;
 	private String ciclo;
 
@@ -18,14 +17,6 @@ public class GradoForm extends ValidatorForm {
 
 	public void setGrado(String grado) {
 		this.grado = grado;
-	}
-
-	public String getMateria() {
-		return materia;
-	}
-
-	public void setMateria(String materia) {
-		this.materia = materia;
 	}
 
 	public String getSeccion() {

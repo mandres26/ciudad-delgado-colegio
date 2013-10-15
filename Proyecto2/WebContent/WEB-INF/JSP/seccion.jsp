@@ -1,4 +1,24 @@
 <%@ include file="../JSP/top-tags.jsp"%>
+<script type="text/javascript" language="JavaScript">
+function nuevo(){
+document.forms[0].method.value ="agregar";
+document.forms[0].submit();
+}
+function update(){
+document.forms[0].method.value ="actualizar";
+document.forms[0].submit();
+}
+function remove(){
+document.forms[0].method.value ="eliminar";
+document.forms[0].submit();
+}
+function show(){
+document.forms[0].method.value ="mostrar";
+// document.forms[0].submit();
+
+}
+ 
+ </script>
 <div id="divform">
 	<h2>Seccion</h2>
 	<br>
@@ -15,17 +35,20 @@
 				<td><html:errors property="cupo" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><html:hidden property="method" value="agregar" />
-					<html:submit property="ingresar">
+				<td colspan="2"><html:hidden property="method" value="" />
+					<html:submit property="ingresar" onclick='nuevo()'>
 						<bean:message key="label.agregar" />
-					</html:submit> <html:button property="actulizar">
+					</html:submit> <html:button property="actulizar" onclick='update()'>
 						<bean:message key="label.actualizar" />
-					</html:button> <html:button property="borrar">
+					</html:button> <html:button property="borrar" onclick='remove()'>
 						<bean:message key="label.eliminar" />
 					</html:button></td>
 			</tr>
 		</table>
 		<div>
+			<logic:present name="msj">
+			<bean:write name="msj" />
+			</logic:present>
 			<html:errors />
 		</div>
 	</html:form>
