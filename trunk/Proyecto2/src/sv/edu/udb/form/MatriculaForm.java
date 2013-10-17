@@ -7,6 +7,7 @@ public class MatriculaForm extends ActionForm{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	private String apellidos;
 	private String nombres;
 	private String grado;
@@ -77,6 +78,7 @@ public class MatriculaForm extends ActionForm{
 	private String csangre;
 	private String corina;
 	
+
 	public String getApellidos() {
 		return apellidos;
 	}

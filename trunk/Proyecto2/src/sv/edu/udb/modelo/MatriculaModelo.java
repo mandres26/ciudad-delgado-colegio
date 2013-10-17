@@ -1,8 +1,11 @@
 package sv.edu.udb.modelo;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.http.*;
 
@@ -572,13 +575,256 @@ public class MatriculaModelo extends Coneccion {
 			estado= true;
 		}catch(SQLException ex){
 			System.out.println("save12"+ex);
-		}finally{
-			cierraConexion();
-			}
+		}
 		return estado;
 		
 	}//fin save12
-	
+	public boolean fecha(HttpServletRequest request){
+		boolean estado=false;
+		Connection cn=getConexion();
+		ResultSet rs = null;
+		PreparedStatement st=null;
+		String fecha;
+		try{
+		String query;
+		query="select CURDATE()";
+		st=cn.prepareStatement(query);
+		rs=st.executeQuery();
+		while (rs.next()) {
+			fecha=rs.getString(1);			
+			System.out.println(fecha);	
+			HttpSession sesion=request.getSession();
+			sesion.setAttribute("fecha", fecha);
+		}
+		estado=true;
+		}catch (SQLException ex){
+			System.out.println("fecha"+ex);
+		}
+		return estado;
+		
+	}
+	public boolean idresponsble(HttpServletRequest request){
+		boolean estado=false;
+		Connection cn=getConexion();
+		ResultSet rs = null;
+		PreparedStatement st=null;
+		int id_parentesco;
+		try{
+			String query;
+			query="select count(*),id_responsable from responsable where id_responsable=(select MAX(id_responsable) AS max  from responsable)";
+			st=cn.prepareStatement(query);
+			rs=st.executeQuery();
+			while (rs.next()) {
+				id_parentesco=rs.getInt(2);			
+				System.out.println(id_parentesco);	
+				HttpSession sesion=request.getSession();
+				sesion.setAttribute("id_responsable", id_parentesco);
+			}
+			estado=true;
+		}catch(SQLException ex){
+			System.out.println("idresposable"+ex);
+		}
+		
+		return estado;
+	}
+	public boolean idinfoextra(HttpServletRequest request){
+		boolean estado=false;
+		Connection cn=getConexion();
+		ResultSet rs = null;
+		PreparedStatement st=null;
+		int id_info_extra;
+		try{
+			String query;
+			query="select count(*),id_info_extra from info_extra where id_info_extra=(select MAX(id_info_extra) AS max  from info_extra)";
+			st=cn.prepareStatement(query);
+			rs=st.executeQuery();
+			while (rs.next()) {
+				id_info_extra=rs.getInt(2);			
+				System.out.println(id_info_extra);	
+				HttpSession sesion=request.getSession();
+				sesion.setAttribute("id_info", id_info_extra);
+			}
+			estado=true;
+		}catch(SQLException ex){
+			System.out.println("idinfo"+ex);
+		}
+		
+		return estado;
+	}
+	public boolean idpadres(HttpServletRequest request){
+		boolean estado=false;
+		Connection cn=getConexion();
+		ResultSet rs = null;
+		PreparedStatement st=null;
+		int id_padres;
+		try{
+			String query;
+			query="select count(*),id_padres_familia from padres_familia where id_padres_familia=(select MAX(id_padres_familia) AS max  from padres_familia)";
+			st=cn.prepareStatement(query);
+			rs=st.executeQuery();
+			while (rs.next()) {
+				id_padres=rs.getInt(2);			
+				System.out.println(id_padres);	
+				HttpSession sesion=request.getSession();
+				sesion.setAttribute("id_padres", id_padres);
+			}
+			estado=true;
+		}catch(SQLException ex){
+			System.out.println("idpadres"+ex);
+		}
+		
+		return estado;
+	}
+	public boolean idespeciales(HttpServletRequest request){
+		boolean estado=false;
+		Connection cn=getConexion();
+		ResultSet rs = null;
+		PreparedStatement st=null;
+		int id_especiales;
+		try{
+			String query;
+			query="select count(*),id_especiales from especiales where id_especiales=(select MAX(id_especiales) AS max  from especiales)";
+			st=cn.prepareStatement(query);
+			rs=st.executeQuery();
+			while (rs.next()) {
+				id_especiales=rs.getInt(2);			
+				System.out.println(id_especiales);	
+				HttpSession sesion=request.getSession();
+				sesion.setAttribute("id_especiales", id_especiales);
+			}
+			estado=true;
+		}catch(SQLException ex){
+			System.out.println("idespeciales"+ex);
+		}
+		
+		return estado;
+	}
+	public boolean idpartida(HttpServletRequest request){
+		boolean estado=false;
+		Connection cn=getConexion();
+		ResultSet rs = null;
+		PreparedStatement st=null;
+		int id_partida;
+		try{
+			String query;
+			query="select count(*),id_partida from partida where id_partida=(select MAX(id_partida) AS max  from partida)";
+			st=cn.prepareStatement(query);
+			rs=st.executeQuery();
+			while (rs.next()) {
+				id_partida=rs.getInt(2);			
+				System.out.println(id_partida);	
+				HttpSession sesion=request.getSession();
+				sesion.setAttribute("id_partida", id_partida);
+			}
+			estado=true;
+		}catch(SQLException ex){
+			System.out.println("id_partida"+ex);
+		}
+		
+		return estado;
+	}
+	public boolean idhermanos(HttpServletRequest request){
+		boolean estado=false;
+		Connection cn=getConexion();
+		ResultSet rs = null;
+		PreparedStatement st=null;
+		int id_hermanos;
+		try{
+			String query;
+			query="select count(*),id_hermanos from hermanos where id_hermanos=(select MAX(id_hermanos) AS max  from hermanos)";
+			st=cn.prepareStatement(query);
+			rs=st.executeQuery();
+			while (rs.next()) {
+				id_hermanos=rs.getInt(2);			
+				System.out.println(id_hermanos);	
+				HttpSession sesion=request.getSession();
+				sesion.setAttribute("id_hermanos", id_hermanos);
+			}
+			estado=true;
+		}catch(SQLException ex){
+			System.out.println("id_hermanos"+ex);
+		}
+		
+		return estado;
+	}
+	public boolean iddoc(HttpServletRequest request){
+		boolean estado=false;
+		Connection cn=getConexion();
+		ResultSet rs = null;
+		PreparedStatement st=null;
+		int id_doc;
+		try{
+			String query;
+			query="select count(*),id_docpresentado from doc_presentado where id_docpresentado=(select MAX(id_docpresentado) AS max  from doc_presentado)";
+			st=cn.prepareStatement(query);
+			rs=st.executeQuery();
+			while (rs.next()) {
+				id_doc=rs.getInt(2);			
+				System.out.println(id_doc);	
+				HttpSession sesion=request.getSession();
+				sesion.setAttribute("id_doc", id_doc);
+			}
+			estado=true;
+		}catch(SQLException ex){
+			System.out.println("id_doc"+ex);
+		}
+		
+		return estado;
+	}
+	public boolean eliminar(String codigo){
+		boolean estado = false;
+		Connection cn=getConexion();
+		PreparedStatement st=null;
+        System.out.println("DEL"+codigo);
+        try {
+        	String query;
+			query="delete from alumno where codigo_alumno='"+codigo+"'";
+			st = cn.prepareStatement(query);
+			
+			st.executeUpdate(query);
+			estado=true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	return estado;
+	}
+	public boolean matriculas(HttpServletRequest request){
+		boolean estado = false;
+		Connection cn=getConexion();
+		PreparedStatement st=null;
+		HttpSession sesion=request.getSession();
+		try {
+			String query;
+			query="insert into matricula(año,maestro_matricula,observaciones,codigo_alumno,"
+					+ "id_responsable,id_info_extra,id_padres_familia,id_especiales,id_partida,id_hermanos,"
+					+ "id_docpresentado,id_turno) values('";
+			st=cn.prepareStatement(query);
+			query+= sesion.getAttribute("fecha")+"','"+
+					sesion.getAttribute("usuario")+"','"+
+					sesion.getAttribute("observaciones")+"','"+
+					sesion.getAttribute("codigo")+"','"+
+					sesion.getAttribute("id_responsable")+"','"+
+					sesion.getAttribute("id_info")+"','"+
+					sesion.getAttribute("id_padres")+"','"+
+					sesion.getAttribute("id_especiales")+"','"+
+					sesion.getAttribute("id_partida")+"','"+
+					sesion.getAttribute("id_hermanos")+"','"+
+					sesion.getAttribute("id_doc")+"','"+
+					sesion.getAttribute("turno")+"')";
+					
+            		st.executeUpdate(query);
+			
+			estado= true;
+		}catch(SQLException ex){
+			System.out.println("Matricula"+ex);
+		}finally{
+			cierraConexion();
+			}
+		
+		return estado;
+		
+	}//fin save11
 	
 	
 	public boolean cerrar(HttpServletRequest request){

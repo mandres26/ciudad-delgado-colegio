@@ -32,17 +32,24 @@
 		<display:column property="codigo" title="Codigo" />
 		<display:column property="nombre" title="Nombres" />
 		<display:column property="apellido" title="Apellidos"/>
-		<display:column title="Ver">
+		
+		<display:column>
 		<!-- ********************************************************** -->
 		<html:form action="/ver"> 
 		<html:hidden property="codigo" value="${listaalumno.codigo} "/>
 		<html:submit property="ver">Ver</html:submit>
-		
 		<html:hidden property="method" value="ver"/>
 		</html:form>
 		<!-- ********************************************************** -->
-						
-		
+		</display:column>
+		<display:column>
+			<!-- ********************************************************** -->
+		<html:form action="/eliminar"> 
+		<html:hidden property="codigo" value="${listaalumno.codigo} "/>
+		<html:submit property="eliminar">Eliminar</html:submit>
+		<html:hidden property="method" value="eliminar"/>
+		</html:form>
+		<!-- ********************************************************** -->
 		</display:column>
 		</display:table>
 		

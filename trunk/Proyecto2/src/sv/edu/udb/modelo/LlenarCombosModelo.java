@@ -125,8 +125,28 @@ public class LlenarCombosModelo extends Coneccion {
 	}
 	
 	
-	public ArrayList<VerBean> VerAlumno() {
-		String sql="Select * from alumno";
+	public ArrayList<VerBean> VerAlumno(String codigo) {
+		String sql="SELECT alumno.codigo_alumno,alumno.apellido_alumno, alumno.nombre_alumno,genero.genero,grado.grado,seccion.seccion,"
+      +" alumno.nacimiento,alumno.edad,responsable.nombre, responsable.direccion,responsable.telefono,matricula.año"
+ +" FROM (((((((colegio2013.grado grado"
+             +" CROSS JOIN colegio2013.seccion seccion"
+                +" ON (grado.idseccion = seccion.id_seccion))"
+            +" INNER JOIN colegio2013.alumno alumno"
+               +" ON (alumno.id_grado = grado.id_grado))"
+           +" INNER JOIN colegio2013.responsable responsable"
+             +"  ON (responsable.codigo_alumno = alumno.codigo_alumno))"
+           +"INNER JOIN colegio2013.matricula matricula"
+             +" ON     (matricula.codigo_alumno = alumno.codigo_alumno)"
+             +"    AND (matricula.id_responsable = responsable.id_responsable))"
+        +"  INNER JOIN colegio2013.info_extra info_extra"
+          +"   ON     (matricula.id_info_extra = info_extra.id_info_extra)"
+          +"      AND (info_extra.codigo_alumno = alumno.codigo_alumno))"
+       +"  INNER JOIN colegio2013.turno turno"
+          +"  ON (matricula.id_turno = turno.id_turno))"
+       +" INNER JOIN colegio2013.zona zona ON (info_extra.zona = zona.idzona))"
+       +"INNER JOIN colegio2013.genero genero"
+        +"  ON (alumno.id_genero = genero.id_genero)"
+        +" WHERE alumno.codigo_alumno = '"+codigo+"'";
 		Connection cn=getConexion();
 		PreparedStatement st=null;
 		try {
@@ -134,7 +154,8 @@ public class LlenarCombosModelo extends Coneccion {
 		rs=st.executeQuery();
 		while(rs.next()){
 			VerBean cat=new VerBean(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),
-					rs.getString(5),rs.getString(6),rs.getString(7));
+					rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),
+					rs.getString(10),rs.getString(11),rs.getString(12));
 		veralumno.add(cat);
 		System.out.println(rs.getString(1) + " " +rs.getString(2)+ " " +rs.getString(3));
 		}

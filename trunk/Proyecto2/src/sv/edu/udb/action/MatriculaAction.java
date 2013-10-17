@@ -1,4 +1,6 @@
 package sv.edu.udb.action;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.http.*;
@@ -11,6 +13,7 @@ import sv.edu.udb.javabeans.GradoBean;
 import sv.edu.udb.javabeans.ParentescoBean;
 import sv.edu.udb.javabeans.SexoBean;
 import sv.edu.udb.javabeans.TurnoBean;
+import sv.edu.udb.modelo.CarnetModelo;
 import sv.edu.udb.modelo.LlenarCombosModelo;
 import sv.edu.udb.modelo.MatriculaModelo;
 
@@ -20,7 +23,7 @@ public class MatriculaAction extends DispatchAction{
 			ActionForm form,
 			HttpServletRequest request,
 			HttpServletResponse response)
-			throws Exception {
+			throws Exception {			
 		
 		LlenarCombosModelo llenar=new LlenarCombosModelo();
 		ArrayList<GradoBean> listagrado=llenar.llenearComboGrado();
@@ -58,8 +61,10 @@ public class MatriculaAction extends DispatchAction{
 		
 		MatriculaForm matri=(MatriculaForm) form;
 		HttpSession sesion=request.getSession();
-		String codigo="DA090044";
-		sesion.setAttribute("codigo", codigo);
+		CarnetModelo cm = new CarnetModelo();
+		sesion.setAttribute("codigo", cm.generar());
+		sesion.setAttribute("usuario", "moy");
+		sesion.setAttribute("observaciones", "nada");
 		sesion.setAttribute("apellidos", matri.getApellidos());
 		sesion.setAttribute("nombres", matri.getNombres());
 		sesion.setAttribute("grado", matri.getGrado());
@@ -168,7 +173,36 @@ public class MatriculaAction extends DispatchAction{
 			
 		}if(mati.save12(request)){
 			request.setAttribute("mensaje", "Exito");
-		}if(mati.cerrar(request)){
+			
+		}if(mati.fecha(request)){
+			request.setAttribute("mensaje", "Exito");
+			
+		}if(mati.idresponsble(request)){
+			request.setAttribute("mensaje", "Exito");
+			
+		}if(mati.idinfoextra(request)){
+			request.setAttribute("mensaje", "Exito");
+			
+		}if(mati.idpadres(request)){
+			request.setAttribute("mensaje", "Exito");
+			
+		}if(mati.idespeciales(request)){
+			request.setAttribute("mensaje", "Exito");
+			
+		}if(mati.idpartida(request)){
+			request.setAttribute("mensaje", "Exito");
+			
+		}if(mati.idhermanos(request)){
+			request.setAttribute("mensaje", "Exito");
+			
+		}if(mati.iddoc(request)){
+			request.setAttribute("mensaje", "Exito");
+			
+		}if(mati.matriculas(request)){
+			request.setAttribute("mensaje", "Exito");
+			
+		}
+		if(mati.cerrar(request)){
 			request.setAttribute("mensaje", "Exito");
 			return mapping.findForward("matriculado");
 		}

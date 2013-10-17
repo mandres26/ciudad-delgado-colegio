@@ -64,6 +64,10 @@
 			scope="request" type="sv.edu.udb.action.BuscarAction">
 			<forward name="veralumno" path="ver" />
 		</action>
+		<action  name="VerForm" input="ver" path="/eliminar" parameter="method"
+			scope="request" type="sv.edu.udb.action.BuscarAction">
+			<forward name="eliminar" path="ver" />
+		</action>
 		
 		<action path="/tiledocente" forward="docente" />
 		<action path="/tilegrado" forward="grado" />
