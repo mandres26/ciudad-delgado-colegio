@@ -106,10 +106,7 @@ public class DocenteModelo {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
-		
-		
-		
+
 		return lista;
 	}
 	
@@ -135,14 +132,6 @@ public class DocenteModelo {
 			
 			while (rs.next()) {
 				//System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4)+" "+rs.getString(5)+" "+rs.getString(6)+" "+rs.getString(7));
-				//DocenteBean db = new DocenteBean(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),"");
-//				lista.add(rs.getString(1));
-//				lista.add(rs.getString(3));
-//				lista.add(rs.getString(4));
-//				lista.add(rs.getString(5));
-//				lista.add(rs.getString(6));
-//				lista.add(rs.getString(7));
-//			listUsers.add(new User("user1", "http://www.user1.com"));
 				lista.add(new DocenteBean(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),""));
 			}
 		} catch (SQLException e) {

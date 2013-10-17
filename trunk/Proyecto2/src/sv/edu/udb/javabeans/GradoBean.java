@@ -3,6 +3,8 @@ package sv.edu.udb.javabeans;
 public class GradoBean {
 	private String id_grado;
 	private String grado;
+	private String idseccion;
+	private String idciclo;
 	
 	public GradoBean() {
 		// TODO Auto-generated constructor stub

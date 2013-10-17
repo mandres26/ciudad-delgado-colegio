@@ -8,15 +8,7 @@ function update(){
 document.forms[0].method.value ="actualizar";
 document.forms[0].submit();
 }
-function remove(){
-document.forms[0].method.value ="eliminar";
-document.forms[0].submit();
-}
-function show(){
-document.forms[0].method.value ="mostrar";
-// document.forms[0].submit();
 
-}
  
  </script>
 <div id="container">
@@ -35,23 +27,50 @@ document.forms[0].method.value ="mostrar";
 		<table>
 			<tr>
 				<td><bean:message key="label.seccion" /></td>
-				<td><html:text property="seccion" /></td>
+				<td>
+				<logic:notPresent name="listacampos2"><html:text property="seccion" /></logic:notPresent>
+				<logic:present name="listacampos2">
+				<logic:iterate name="listacampos2" id="Id">
+				<html:text property="seccion" value="${Id.seccion}" />
+				</logic:iterate>
+				</logic:present>
+				</td>
 				<td><html:errors property="seccion" /></td>
 			</tr>
 			<tr>
 				<td><bean:message key="label.cupo" /></td>
-				<td><html:text property="cupo" /></td>
+				<td>
+				<logic:notPresent name="listacampos2"><html:text property="cupo" /></logic:notPresent>
+				<logic:present name="listacampos2">
+				<logic:iterate name="listacampos2" id="Id">
+				<html:text property="cupo" value="${Id.limite}" />
+				</logic:iterate>
+				</logic:present>
+				</td>
 				<td><html:errors property="cupo" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><html:hidden property="method" value="" />
+				
+				<logic:present name="listacampos2">
+				<logic:iterate name="listacampos2" id="Id">
+				<html:hidden property="id" value="${Id.idseccion}" />
+				</logic:iterate>
+				</logic:present>
+				
+				<logic:present name="listacampos2">
+					<html:submit property="actulizar" onclick='update()'>
+						<bean:message key="label.actualizar" />
+					</html:submit> 
+				</logic:present>
+				
+				<logic:notPresent name="listacampos2">
 					<html:submit property="ingresar" onclick='nuevo()'>
 						<bean:message key="label.agregar" />
-					</html:submit> <html:button property="actulizar" onclick='update()'>
-						<bean:message key="label.actualizar" />
-					</html:button> <html:button property="borrar" onclick='remove()'>
-						<bean:message key="label.eliminar" />
-					</html:button></td>
+					</html:submit>  
+				</logic:notPresent>	
+					
+					</td>
 			</tr>
 		</table>
 		<div>
@@ -59,7 +78,22 @@ document.forms[0].method.value ="mostrar";
 			<bean:write name="msj" />
 			</logic:present>
 			<html:errors />
+			<logic:present name="listacampos2">
+			existe
+			</logic:present>
 		</div>
 	</html:form>
-
+<html:link action="/secciondisplay?method=mostrar">Mostrar</html:link>	
+</div>
+<div>
+	<logic:present name="listdisplaytag">
+	<display:table id="seccion" name="listdisplaytag" pagesize="2" requestURI=""> 
+	<display:column title="Seccion" property="seccion" />
+	<display:column title="Limite" property="limite" />
+	<display:column title="Mantenimiento">
+	<html:link action="/secciondisplay?method=eliminar&id=${seccion.idseccion}">Eliminar</html:link>
+	<html:link action="/secciondisplay?method=campos&id=${seccion.idseccion}">Actulizar</html:link>			
+	</display:column>
+	</display:table>
+	</logic:present>
 </div>
