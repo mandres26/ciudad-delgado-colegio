@@ -12,6 +12,15 @@ document.forms[0].submit();
 
  
  </script>
+<div id="container">
+      <div class="post">
+      <center>
+      <h2 class="aviso"><strong>BUSQUEDA DE ALUMNOS</strong></h2>
+      </center>
+      <blockquote>
+        <p>CENTRO ESCOLAR CATOLICO MONSEÑOR ESTEBAN ALLIET.</p>
+      </blockquote>
+    </div>
 <div id="divform">
 	<h2>Docentes</h2>
 	<br>

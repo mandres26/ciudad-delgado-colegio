@@ -1,4 +1,13 @@
 <%@ include file="../JSP/top-tags.jsp"%>
+<div id="container">
+      <div class="post">
+      <center>
+      <h2 class="aviso"><strong>BUSQUEDA DE ALUMNOS</strong></h2>
+      </center>
+      <blockquote>
+        <p>CENTRO ESCOLAR CATOLICO MONSEÑOR ESTEBAN ALLIET.</p>
+      </blockquote>
+    </div>
 <div class="post">
 	<h2 class="aviso">Avisos y Novedades</h2>
 	<blockquote>
