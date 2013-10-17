@@ -24,16 +24,27 @@
 		<action name="GradoForm" path="/grado" input="/gradocombos.do?method=combo" parameter="method"
 			scope="request" type="sv.edu.udb.action.GradoAction">
 			<forward name="ingresado" path="/tilegrado.do" />
+			<forward name="display" path="/tilegrado.do" />
 		</action>
 		
 		<action path="/gradocombos" parameter="method" 
 			scope="request" type="sv.edu.udb.action.GradoAction">
-			<forward name="ingresado" path="/tilegrado.do" />
+			<forward name="combo" path="/tilegrado.do" />
+		</action>
+		
+		<action path="/gradodisplay" parameter="method" 
+			 scope="request" type="sv.edu.udb.action.GradoAction">
+			<forward name="display" path="/tilegrado.do" />
 		</action>
 		
 		<action name="SeccionForm" path="/seccion" input="/tileseccion.do" parameter="method"
 			scope="request" type="sv.edu.udb.action.SeccionAction">
 			<forward name="ingresado" path="/tileseccion.do" />
+		</action>
+		
+		<action path="/secciondisplay" parameter="method" 
+			 scope="request" type="sv.edu.udb.action.SeccionAction">
+			<forward name="display" path="/tileseccion.do" />
 		</action>
 
 		<action name="DocenteForm" path="/docente" input="/docentegenero.do?method=combo"
