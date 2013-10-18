@@ -1,8 +1,10 @@
 package sv.edu.udb.action;
 
 import javax.servlet.http.*;
+
 import org.apache.struts.action.*;
 import org.apache.struts.actions.DispatchAction;
+
 import sv.edu.udb.form.DocenteForm;
 import sv.edu.udb.modelo.DocenteModelo;
 public class DocenteAction extends DispatchAction{
@@ -35,16 +37,22 @@ public class DocenteAction extends DispatchAction{
 		Integer num=dm.actulizar(df, codigo);
 		String msj="";
 		if(num==0){
-			msj="Error, Al Actilizar Datos";
+			msj="Error, Al Actualizar Datos";
 		}else if(num==1){
-			msj="Datos Actilizados Correctamente";
+			msj="Datos Actualizados Correctamente";
 		}else{
 			msj="Error Interno.";
 		}
+		df.setGenero("Seleccione");
+	form = (ActionForm) df;
 		request.setAttribute("listagenero", dm.listaGenero());
 		request.setAttribute("msj", msj);
-		
-		System.out.println("llego action Actilizar");
+		HttpSession docentesesion = request.getSession(true);
+		if(docentesesion.getAttribute("listacampos3")!=null){
+			docentesesion.removeAttribute("listacampos3");
+			System.out.println("sesion eliminada");
+		}
+		System.out.println("llego action Actulizar");
 		return mapping.findForward("ingresado");
 
 	}
@@ -66,7 +74,13 @@ public class DocenteAction extends DispatchAction{
 		}
 		request.setAttribute("listagenero", dm.listaGenero());
 		request.setAttribute("msj", msj);
-		
+		HttpSession docenteseccion = request.getSession(true);
+		if(docenteseccion.getAttribute("listacampos3")!=null){
+			docenteseccion.removeAttribute("listacampos3");
+			System.out.println("sesion eliminada");
+		}else{
+			System.out.println("no existe la sesion");
+		}
 		System.out.println("llego action eliminar");
 		return mapping.findForward("ingresado");
 
@@ -76,8 +90,9 @@ public class DocenteAction extends DispatchAction{
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		DocenteModelo dm = new DocenteModelo();
+		HttpSession docenteseccion = request.getSession(true);
 		String codigo = request.getParameter("codigo");
-		request.setAttribute("listacampos", dm.listacampos(codigo));
+		docenteseccion.setAttribute("listacampos3", dm.listacampos(codigo));
 		request.setAttribute("listagenero", dm.listaGenero());
 		System.out.println("llego action listacampos");
 		return mapping.findForward("ingresado");
@@ -102,7 +117,14 @@ public class DocenteAction extends DispatchAction{
 			throws Exception {
 		DocenteModelo dm = new DocenteModelo();
 		request.setAttribute("listagenero", dm.listaGenero());
-		System.out.println("llego action listagenero");
+		HttpSession docentesesion = request.getSession(true);
+		if(docentesesion.getAttribute("listacampos3")!=null){
+			docentesesion.removeAttribute("listacampos3");
+			System.out.println("sesion eliminada");
+		}else{
+			System.out.println("no existe la sesion");
+		}
+		
 		return mapping.findForward("ingresado");
 
 	}

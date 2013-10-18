@@ -13,9 +13,9 @@
 	<blockquote>
 		<p>Inicio de año escolar 2012</p>
 	</blockquote>
-<html:link action="/docentegenero?method=combo">docente</html:link>
-	<html:link action="/gradocombos?method=combo">grado</html:link>
-	<html:link forward="seccion">seccion</html:link>
+<html:link action="/docentegenero?method=combo">Docente</html:link>
+	<html:link action="/gradocombos?method=combo">Grado</html:link>
+	<html:link forward="seccion">Seccion</html:link>
 
 </div>
 <div>
