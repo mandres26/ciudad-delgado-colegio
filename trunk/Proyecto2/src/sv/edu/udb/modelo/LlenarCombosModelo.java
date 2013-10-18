@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import sv.edu.udb.javabeans.BuscaAlumnoBean;
+import sv.edu.udb.javabeans.CodigosBean;
 import sv.edu.udb.javabeans.GradoBean;
 import sv.edu.udb.javabeans.ParentescoBean;
 import sv.edu.udb.javabeans.SexoBean;
@@ -26,6 +27,8 @@ public class LlenarCombosModelo extends Coneccion {
 	ArrayList<ParentescoBean> listapare=new ArrayList<ParentescoBean>();
 	ArrayList<BuscaAlumnoBean> listaalumno=new ArrayList<BuscaAlumnoBean>();
 	ArrayList<VerBean> veralumno=new ArrayList<VerBean>();
+	ArrayList<CodigosBean> listacodigo = new ArrayList<CodigosBean>();
+	
 	public ArrayList<GradoBean> llenearComboGrado() {
 		String sql="Select * from grado";
 		Connection cn=getConexion();
@@ -165,5 +168,26 @@ public class LlenarCombosModelo extends Coneccion {
 		e.printStackTrace();
 		}
 		return veralumno;
+	}
+	
+	
+	public ArrayList<CodigosBean> llenearComboCodigo(){
+		String sql="Select * from TipeCod";
+		Connection cn=getConexion();
+		PreparedStatement st=null;
+		try {
+		st=cn.prepareStatement(sql);
+		rs=st.executeQuery();
+		while(rs.next()){
+			CodigosBean cat=new CodigosBean(rs.getString(1),rs.getString(2));
+		listacodigo.add(cat);
+		System.out.println(rs.getString(1) + " " +rs.getString(2));
+		}
+		cierraConexion();
+		} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		}
+		return listacodigo;
 	}
 }

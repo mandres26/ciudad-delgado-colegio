@@ -58,5 +58,20 @@
 <put name="titulo" value=".::Centro Escolar ::."/>
 <put name="cuerpo" value="/WEB-INF/JSP/ver-alumno.jsp"/>
 </definition>
+<definition name="notas" extends="principal">
+<put name="titulo" value=".::Notas Alumnos ::."/>
+<put name="cuerpo" value="/WEB-INF/JSP/Notas.jsp"/>
+</definition>
+
+<definition name="vercodigos" extends="principal">
+<put name="titulo" value=".::Codigos Alumnos ::."/>
+<put name="cuerpo" value="/WEB-INF/JSP/VerCodigos.jsp"/>
+</definition>
+
+<definition name="addcodigos" extends="principal">
+<put name="titulo" value=".::Codigos Alumnos ::."/>
+<put name="cuerpo" value="/WEB-INF/JSP/AddCodigos.jsp"/>
+</definition>
+
 </tiles-definitions>
 
