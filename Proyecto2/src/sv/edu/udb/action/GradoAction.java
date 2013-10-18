@@ -54,8 +54,14 @@ public class GradoAction extends DispatchAction{
 			request.setAttribute("listaseccion", gm.listaseccion());
 			request.setAttribute("listaciclo", gm.listaciclo());
 			System.out.println("action grado combos");
-			HttpSession sessiongrado = request.getSession(true);
-			sessiongrado.invalidate();
+			HttpSession gradosesion = request.getSession(true);
+			if(gradosesion.getAttribute("listacampos")!=null){
+				gradosesion.removeAttribute("listacampos");
+				System.out.println("sesion eliminada");
+			}
+			gf.setCiclo("Seleccione");
+			gf.setSeccion("Seleccione");
+			form = (ActionForm) gf;
 			return mapping.findForward("display");
 			
 			}	
@@ -80,6 +86,11 @@ public class GradoAction extends DispatchAction{
 			request.setAttribute("listaciclo", gm.listaciclo());
 			request.setAttribute("msj", msj);
 			System.out.println("action grado combos");
+			HttpSession gradosesion = request.getSession(true);
+			if(gradosesion.getAttribute("listacampos")!=null){
+				gradosesion.removeAttribute("listacampos");
+				System.out.println("sesion eliminada");
+			}
 			return mapping.findForward("display");
 			
 			}
@@ -103,10 +114,10 @@ public class GradoAction extends DispatchAction{
 			HttpServletRequest request,
 			HttpServletResponse response)
 			throws Exception {
-			HttpSession sessiongrado = request.getSession(true);
+			HttpSession gradosesion = request.getSession(true);
 			GradoModelo gm = new GradoModelo();
 			String id = request.getParameter("id");
-			sessiongrado.setAttribute("listacampos", gm.listacampos(id));
+			gradosesion.setAttribute("listacampos", gm.listacampos(id));
 			request.setAttribute("listaseccion", gm.listaseccion());
 			request.setAttribute("listaciclo", gm.listaciclo());
 			System.out.println("action grado combos");
@@ -123,6 +134,11 @@ public class GradoAction extends DispatchAction{
 			request.setAttribute("listaseccion", gm.listaseccion());
 			request.setAttribute("listaciclo", gm.listaciclo());
 			System.out.println("action grado combos");
+			HttpSession gradosesion = request.getSession(true);
+			if(gradosesion.getAttribute("listacampos")!=null){
+				gradosesion.removeAttribute("listacampos");
+				System.out.println("sesion eliminada");
+			}
 			return mapping.findForward("combo");
 			
 			}
