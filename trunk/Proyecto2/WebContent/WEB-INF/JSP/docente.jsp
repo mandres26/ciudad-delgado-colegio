@@ -30,9 +30,9 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.nombre" /></td>
 				<td>
-				<logic:notPresent name="listacampos"><html:text property="nombre" /></logic:notPresent> 
-				<logic:present name="listacampos">
-				<logic:iterate name="listacampos" id="Id">
+				<logic:notPresent name="listacampos3"><html:text property="nombre" value="" /></logic:notPresent> 
+				<logic:present name="listacampos3">
+				<logic:iterate name="listacampos3" id="Id">
 				<html:text property="nombre" value="${Id.nombre_docente}" />
 				</logic:iterate>
 				</logic:present>
@@ -43,10 +43,10 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.apellido" /></td>
 				<td>
-				<logic:notPresent name="listacampos"><html:text property="apellido" />
+				<logic:notPresent name="listacampos3"><html:text property="apellido" value="" />
 				</logic:notPresent>
-				<logic:present name="listacampos">
-				<logic:iterate name="listacampos" id="Id">
+				<logic:present name="listacampos3">
+				<logic:iterate name="listacampos3" id="Id">
 				<html:text property="apellido" value="${Id.apellido_docente}" />
 				</logic:iterate>
 				</logic:present>
@@ -56,10 +56,10 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.direccion" /></td>
 				<td>
-				<logic:notPresent name="listacampos"><html:text property="direccion" />
+				<logic:notPresent name="listacampos3"><html:text property="direccion" value="" />
 				</logic:notPresent>
-				<logic:present name="listacampos">
-				<logic:iterate name="listacampos" id="Id">
+				<logic:present name="listacampos3">
+				<logic:iterate name="listacampos3" id="Id">
 				<html:text property="direccion" value="${Id.direccion}" />
 				</logic:iterate>
 				</logic:present>
@@ -69,10 +69,10 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.telefono" /></td>
 				<td>
-				<logic:notPresent name="listacampos"><html:text property="telefono" />
+				<logic:notPresent name="listacampos3"><html:text property="telefono" value="" />
 				</logic:notPresent>
-				<logic:present name="listacampos">
-				<logic:iterate name="listacampos" id="Id">
+				<logic:present name="listacampos3">
+				<logic:iterate name="listacampos3" id="Id">
 				<html:text property="telefono" value="${Id.telefono}" />
 				</logic:iterate>
 				</logic:present>
@@ -82,10 +82,10 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.correo" /></td>
 				<td>
-				<logic:notPresent name="listacampos" ><html:text property="correo" />
+				<logic:notPresent name="listacampos3" ><html:text property="correo" value="" />
 				</logic:notPresent>
-				<logic:present name="listacampos">
-				<logic:iterate name="listacampos" id="Id">
+				<logic:present name="listacampos3">
+				<logic:iterate name="listacampos3" id="Id">
 				<html:text property="correo" value="${Id.correo}" />
 				</logic:iterate>
 				</logic:present>
@@ -95,33 +95,49 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.genero" /></td>
 				<td>
-				
+				<logic:notPresent name="listacampos3">
 				<logic:present name="listagenero">
 				<html:select property="genero" >
-				<html:option value="">Seleciona</html:option>
+				<html:option value="">Seleccione</html:option>
 				<html:options collection="listagenero" property="idgenero" labelProperty="genero"/>
 				</html:select>
 				</logic:present>
+				</logic:notPresent>
 				
-
+				<logic:present name="listacampos3">
+				<html:select property="genero" >
+				<html:option value="">Seleccione</html:option>
+				<logic:iterate name="listagenero" id="lista">
+				<logic:iterate id="c" name="listacampos3">
+				<logic:equal name="c" property="id_genero" value="${lista.genero}">
+				<option value="${lista.idgenero}" selected="selected">${lista.genero}</option>
+				</logic:equal>
+				</logic:iterate>
+				</logic:iterate>
+				</html:select>
+				</logic:present>
+				
 				</td>
 				<td><html:errors property="genero" /></td>
 			</tr>
 			<tr>
 				<td colspan="2">
 				<html:hidden property="method" value="" />
-				<logic:present name="listacampos">
-				<logic:iterate name="listacampos" id="Id">
+				<logic:present name="listacampos3">
+				<logic:iterate name="listacampos3" id="Id">
 				<html:hidden property="codigo" value="${Id.codigo_docentes}" />
 				</logic:iterate>
 				</logic:present>
-				<logic:present name="listacampos">
+				<logic:present name="listacampos3">
 					<html:submit property="actulizar" onclick='update()'>
 						<bean:message key="label.actualizar" />
-					</html:submit> 
+					</html:submit>
+					
+					<html:link action="/docentegenero?method=combo"><bean:message key="label.cancelar" /></html:link>	
+					
 				</logic:present>
 				
-				<logic:notPresent name="listacampos">
+				<logic:notPresent name="listacampos3">
 					<html:submit property="ingresar" onclick='nuevo()'>
 						<bean:message key="label.agregar" />
 					</html:submit>  

@@ -52,6 +52,8 @@ public class SeccionAction extends DispatchAction{
 				msj="Error Interno.";
 			}
 			request.setAttribute("msj", msj);
+			HttpSession sessionseccion = request.getSession(true);
+			sessionseccion.invalidate();
 			return mapping.findForward("ingresado");
 			
 			}
