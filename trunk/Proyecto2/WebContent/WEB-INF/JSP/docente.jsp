@@ -12,6 +12,10 @@ document.forms[0].submit();
 
  
  </script>
+ <link href="css/jquery-ui-1.8.22.custom.css" rel="stylesheet" type="text/css">
+        <link href="css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+        <link href="css/demo_table.css" rel="stylesheet" type="text/css">
+        <link href="css/demo_table_jui.css" rel="stylesheet" type="text/css">
 <div id="container">
       <div class="post">
       <center>

@@ -27,7 +27,7 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.grado" /></td>
 				<td>
-				<logic:notPresent name="listacampos"><html:text property="grado" /></logic:notPresent>
+				<logic:notPresent name="listacampos"><html:text property="grado" value="" /></logic:notPresent>
 				
 				<logic:present name="listacampos">
 				<logic:iterate name="listacampos" id="Id">
@@ -114,6 +114,8 @@ document.forms[0].submit();
 					<html:submit property="actulizar" onclick='update()'>
 						<bean:message key="label.actualizar" />
 					</html:submit> 
+					
+					<html:link action="/gradocombos?method=combo"><bean:message key="label.cancelar" /></html:link>	
 				</logic:present>
 				
 				<logic:notPresent name="listacampos">
@@ -137,7 +139,7 @@ document.forms[0].submit();
 </div>
 <div>
 	<logic:present name="listdisplaytag">
-	<display:table id="grado" name="listdisplaytag" pagesize="2" requestURI=""> 
+	<display:table id="grado" name="listdisplaytag" pagesize="10" requestURI=""> 
 	<display:column title="Ciclo" property="idciclo" />
 	<display:column title="Grado" property="grado" />
 	<display:column title="Seccion" property="idseccion" />
