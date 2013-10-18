@@ -12,6 +12,9 @@
 		<form-bean name="MatriculaForm" type="sv.edu.udb.form.MatriculaForm" />
 		<form-bean name="BuscarForm" type="sv.edu.udb.form.BuscarForm" />
 		<form-bean name="VerForm" type="sv.edu.udb.form.VerForm" />
+		<form-bean name="NotasForm" type="sv.edu.udb.form.NotasForm" />
+		<form-bean name="VerCodigosForm" type="sv.edu.udb.form.VerCodigosForm" />
+		<form-bean name="AddCodigosForm" type="sv.edu.udb.form.AddCodigosForm" />
 	</form-beans>
 
 	<global-forwards>
@@ -80,9 +83,30 @@
 			<forward name="eliminar" path="ver" />
 		</action>
 		
+		<action name="NotasForm" path="/notas" input="notas" parameter="method" 
+		type="sv.edu.udb.action.NotasAction" >
+		<forward name="notas" path="notas" />
+		</action>
+		
+		<action name="VerCodigosForm" path="/vercodigos" input="codigos" parameter="method" 
+		type="sv.edu.udb.action.VerCodigosAction" >
+		<forward name="codigos" path="codigos" />
+		</action>
+		
+		<action name="AddCodigosForm" path="/addcodigos" input="/tilesaddcodigos.do" parameter="method" 
+		type="sv.edu.udb.action.AddCodigosAction" >
+		<forward name="cod" path="/tilesaddcodigos.do" />
+		</action>
+		
+		<action path="/codigosdisplay" parameter="method" 
+			 scope="request" type="sv.edu.udb.action.AddCodigosAction">
+			<forward name="cod" path="/tilesaddcodigos.do" />
+		</action>
+		
 		<action path="/tiledocente" forward="docente" />
 		<action path="/tilegrado" forward="grado" />
 		<action path="/tileseccion" forward="seccion" />
+		<action path="/tilesaddcodigos" forward="addcodigos"/>
 
 	</action-mappings>
 

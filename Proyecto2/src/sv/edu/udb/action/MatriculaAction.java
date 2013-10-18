@@ -40,6 +40,7 @@ public class MatriculaAction extends DispatchAction{
 
 		return mapping.findForward("matriculado");
 	}
+	
 	public ActionForward matricula(ActionMapping mapping,
 			ActionForm form,
 			HttpServletRequest request,
