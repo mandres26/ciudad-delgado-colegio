@@ -19,7 +19,8 @@ public class DocenteModelo {
 		
         try {
 			pt = cn.getConexion().prepareStatement(query);
-			pt.setString(1, cm.generar());
+			String carnet = cm.generar();
+			pt.setString(1, carnet);
 			pt.setString(2, df.getNombre());
 			pt.setString(3, df.getApellido());
 			pt.setString(4, df.getDireccion());
@@ -28,6 +29,16 @@ public class DocenteModelo {
 			pt.setString(7, df.getGenero());
 			pt.setString(8, null);
 			valor = pt.executeUpdate();
+			System.out.println("insert docente "+valor+" "+carnet);
+			if(valor==1){
+			String query2 = "insert into usuarios values(?,?,?,?)";	
+			pt = cn.getConexion().prepareStatement(query2);
+			pt.setString(1, carnet);
+			pt.setString(2, carnet);
+			pt.setString(3, carnet);
+			pt.setString(4, "2");
+			pt.executeUpdate();
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			if (e.getSQLState().equals("23000")) {//error de duplicado de primary key.

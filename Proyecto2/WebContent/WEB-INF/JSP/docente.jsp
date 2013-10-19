@@ -34,7 +34,7 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.nombre" /></td>
 				<td>
-				<logic:notPresent name="listacampos3"><html:text property="nombre" value="" /></logic:notPresent> 
+				<logic:notPresent name="listacampos3"><html:text property="nombre" /></logic:notPresent> 
 				<logic:present name="listacampos3">
 				<logic:iterate name="listacampos3" id="Id">
 				<html:text property="nombre" value="${Id.nombre_docente}" />
@@ -47,7 +47,7 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.apellido" /></td>
 				<td>
-				<logic:notPresent name="listacampos3"><html:text property="apellido" value="" />
+				<logic:notPresent name="listacampos3"><html:text property="apellido"  />
 				</logic:notPresent>
 				<logic:present name="listacampos3">
 				<logic:iterate name="listacampos3" id="Id">
@@ -60,7 +60,7 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.direccion" /></td>
 				<td>
-				<logic:notPresent name="listacampos3"><html:text property="direccion" value="" />
+				<logic:notPresent name="listacampos3"><html:text property="direccion"  />
 				</logic:notPresent>
 				<logic:present name="listacampos3">
 				<logic:iterate name="listacampos3" id="Id">
@@ -73,7 +73,7 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.telefono" /></td>
 				<td>
-				<logic:notPresent name="listacampos3"><html:text property="telefono" value="" />
+				<logic:notPresent name="listacampos3"><html:text property="telefono"  />
 				</logic:notPresent>
 				<logic:present name="listacampos3">
 				<logic:iterate name="listacampos3" id="Id">
@@ -86,7 +86,7 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.correo" /></td>
 				<td>
-				<logic:notPresent name="listacampos3" ><html:text property="correo" value="" />
+				<logic:notPresent name="listacampos3" ><html:text property="correo"  />
 				</logic:notPresent>
 				<logic:present name="listacampos3">
 				<logic:iterate name="listacampos3" id="Id">

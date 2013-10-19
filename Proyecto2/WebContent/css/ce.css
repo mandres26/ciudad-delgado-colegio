@@ -68,7 +68,8 @@ blockquote{background-color:#F6FAFD;color:#59819F;padding:10px;margin:0px;border
 #wrapper_sidebar ul li a:hover {color:#0099CC;background-color:#F6FAFD;}
 #wrapper_sidebar ul li li a:link, #sidebar ul li li a:visited {border-left: 4px solid #0EB8FF;}
 #wrapper_sidebar ul li li a {border-right:	1px solid #CFDEFF;}
-
+/*-- login --*/
+.login{width:80%;}
 /*-- Estilos para el pie --*/
 #footer{background-color:#299fcd;border-top:4px solid #DCE9F6;color:#FFF;padding:5px 10px;margin:auto;}
 #footer ul{margin-left: 0;padding-left: 0;white-space: nowrap;}
