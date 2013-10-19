@@ -15,6 +15,7 @@
 		<form-bean name="NotasForm" type="sv.edu.udb.form.NotasForm" />
 		<form-bean name="VerCodigosForm" type="sv.edu.udb.form.VerCodigosForm" />
 		<form-bean name="AddCodigosForm" type="sv.edu.udb.form.AddCodigosForm" />
+		<form-bean name="LoginForm" type="sv.edu.udb.form.LoginForm" />
 	</form-beans>
 
 	<global-forwards>
@@ -23,7 +24,7 @@
 		<forward name="seccion" path="/tileseccion.do" />
 	</global-forwards>
 
-	<action-mappings>
+	<action-mappings>		
 		<action name="GradoForm" path="/grado" input="/gradocombos.do?method=combo" parameter="method"
 			scope="request" type="sv.edu.udb.action.GradoAction">
 			<forward name="ingresado" path="/tilegrado.do" />
@@ -101,6 +102,12 @@
 		<action path="/codigosdisplay" parameter="method" 
 			 scope="request" type="sv.edu.udb.action.AddCodigosAction">
 			<forward name="cod" path="/tilesaddcodigos.do" />
+		</action>
+		
+		<action name="LoginForm" path="/login"  parameter="method"
+			scope="request" type="sv.edu.udb.action.LoginAction">
+			<forward name="inicio" path="/Index.jsp" />
+			
 		</action>
 		
 		<action path="/tiledocente" forward="docente" />
