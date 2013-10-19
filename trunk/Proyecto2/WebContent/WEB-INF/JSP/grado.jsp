@@ -27,7 +27,7 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.grado" /></td>
 				<td>
-				<logic:notPresent name="listacampos"><html:text property="grado" value="" /></logic:notPresent>
+				<logic:notPresent name="listacampos"><html:text property="grado" /></logic:notPresent>
 				
 				<logic:present name="listacampos">
 				<logic:iterate name="listacampos" id="Id">

@@ -3,12 +3,9 @@ import javax.servlet.http.*;
 
 import org.apache.struts.action.*;
 import org.apache.struts.actions.DispatchAction;
-
 import sv.edu.udb.form.SeccionForm;
 import sv.edu.udb.modelo.SeccionModelo;
 
-import org.apache.struts.action.*;
-import org.apache.struts.actions.DispatchAction;
 
 public class SeccionAction extends DispatchAction{
 	
@@ -51,9 +48,15 @@ public class SeccionAction extends DispatchAction{
 			}else{
 				msj="Error Interno.";
 			}
+			sf.setCupo("");
+			sf.setSeccion("");
+			form = (ActionForm) sf ;
 			request.setAttribute("msj", msj);
 			HttpSession sessionseccion = request.getSession(true);
-			sessionseccion.invalidate();
+			if(sessionseccion.getAttribute("listacampos2")!=null){
+				sessionseccion.removeAttribute("listacampos2");
+				System.out.println("sesion eliminada");
+			};
 			return mapping.findForward("ingresado");
 			
 			}
@@ -75,6 +78,11 @@ public class SeccionAction extends DispatchAction{
 				msj="Error Interno.";
 			}
 			request.setAttribute("msj", msj);
+			HttpSession sessionseccion = request.getSession(true);
+			if(sessionseccion.getAttribute("listacampos2")!=null){
+				sessionseccion.removeAttribute("listacampos2");
+				System.out.println("sesion eliminada");
+			}
 			return mapping.findForward("display");
 			
 			}
@@ -100,6 +108,20 @@ public class SeccionAction extends DispatchAction{
 			SeccionModelo sm = new SeccionModelo();
 			String id = request.getParameter("id");
 			sessionseccion.setAttribute("listacampos2", sm.listacampos(id));
+			return mapping.findForward("display");
+			
+			}
+	
+	public ActionForward cancelar(ActionMapping mapping,
+			ActionForm form,
+			HttpServletRequest request,
+			HttpServletResponse response)
+			throws Exception {
+		HttpSession sessionseccion = request.getSession(true);
+		if(sessionseccion.getAttribute("listacampos2")!=null){
+			sessionseccion.removeAttribute("listacampos2");
+			System.out.println("sesion eliminada");
+		}
 			return mapping.findForward("display");
 			
 			}

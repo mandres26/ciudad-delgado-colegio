@@ -1,5 +1,6 @@
 <%@ include file="../JSP/top-tags.jsp"%>
 <div id="container">
+<div id="container">
       <div class="post">
       <center>
       <h2 class="aviso"><strong>BUSQUEDA DE ALUMNOS</strong></h2>
@@ -13,10 +14,10 @@
 	<blockquote>
 		<p>Inicio de año escolar 2012</p>
 	</blockquote>
-<html:link action="/docentegenero?method=combo">Docente</html:link>
-	<html:link action="/gradocombos?method=combo">Grado</html:link>
-	<html:link forward="seccion">Seccion</html:link>
+	
 
+ </div>
+ 
 </div>
 <div>
 	<h2>Contenido &amp; links</h2>

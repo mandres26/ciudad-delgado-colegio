@@ -28,7 +28,7 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.seccion" /></td>
 				<td>
-				<logic:notPresent name="listacampos2"><html:text property="seccion" /></logic:notPresent>
+				<logic:notPresent name="listacampos2"><html:text property="seccion"  /></logic:notPresent>
 				<logic:present name="listacampos2">
 				<logic:iterate name="listacampos2" id="Id">
 				<html:text property="seccion" value="${Id.seccion}" />
@@ -40,7 +40,7 @@ document.forms[0].submit();
 			<tr>
 				<td><bean:message key="label.cupo" /></td>
 				<td>
-				<logic:notPresent name="listacampos2"><html:text property="cupo" /></logic:notPresent>
+				<logic:notPresent name="listacampos2"><html:text property="cupo"  /></logic:notPresent>
 				<logic:present name="listacampos2">
 				<logic:iterate name="listacampos2" id="Id">
 				<html:text property="cupo" value="${Id.limite}" />
@@ -61,7 +61,9 @@ document.forms[0].submit();
 				<logic:present name="listacampos2">
 					<html:submit property="actulizar" onclick='update()'>
 						<bean:message key="label.actualizar" />
-					</html:submit> 
+					</html:submit>
+					
+					<html:link action="/secciondisplay?method=cancelar"><bean:message key="label.cancelar" /></html:link>	 
 				</logic:present>
 				
 				<logic:notPresent name="listacampos2">
@@ -78,12 +80,10 @@ document.forms[0].submit();
 			<bean:write name="msj" />
 			</logic:present>
 			<html:errors />
-			<logic:present name="listacampos2">
-			existe
-			</logic:present>
+			
 		</div>
 	</html:form>
-<html:link action="/secciondisplay?method=mostrar">Mostrar</html:link>	
+<html:link action="/secciondisplay?method=mostrar"><bean:message key="label.mostrar" /></html:link>	
 </div>
 <div>
 	<logic:present name="listdisplaytag">

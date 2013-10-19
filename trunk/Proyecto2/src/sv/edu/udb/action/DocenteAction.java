@@ -23,6 +23,8 @@ public class DocenteAction extends DispatchAction{
 		}else{
 			msj="Error Interno.";
 		}
+		
+		form = (ActionForm) df;
 		request.setAttribute("listagenero", dm.listaGenero());
 		request.setAttribute("msj", msj);
 		return mapping.findForward("ingresado");
@@ -43,6 +45,11 @@ public class DocenteAction extends DispatchAction{
 		}else{
 			msj="Error Interno.";
 		}
+		df.setNombre("");
+		df.setApellido("");
+		df.setDireccion("");
+		df.setTelefono("");
+		df.setCorreo("");
 		df.setGenero("Seleccione");
 	form = (ActionForm) df;
 		request.setAttribute("listagenero", dm.listaGenero());
